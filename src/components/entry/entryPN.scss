@@ -1,0 +1,30 @@
+#img-style {
+    overflow: hidden;
+
+        img {
+            transition: 0.5s all;
+        }
+    }
+
+#img-gray-style {
+    overflow: hidden;
+
+        img {
+            filter: grayscale(100%);
+            transition: 0.5s all;
+        }
+    }
+
+#all-style {
+    transition: 0.5s all;
+
+       &:hover {
+        box-shadow: 2px 2px 10px grey;
+
+        img {
+            filter: grayscale(0%);
+            transform: scale(1.1);  
+        }
+    }
+}
+
