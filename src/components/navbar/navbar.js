@@ -60,6 +60,9 @@ class Navbar extends Component {
                                     <NavLink to='/testing' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Degustacje</span></NavLink>
                                 </li>
                                 <li className="nav-item">
+                                    <NavLink to='/login' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Logowanie</span></NavLink>
+                                </li>
+                                <li className="nav-item">
                                     <NavLink to='/contact' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Kontakt</span></NavLink>
                                 </li>
                                 {this.props.auth.uid &&

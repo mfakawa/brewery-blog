@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authAction';
 import { Redirect } from 'react-router-dom';
+import './login.scss';
 
 
 class Login extends Component {
@@ -9,6 +10,11 @@ class Login extends Component {
         email: '',
         password: ''
     }
+
+    componentDidMount = () => {
+        window.scrollTo(0, 0);
+    }
+
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -26,10 +32,9 @@ class Login extends Component {
         return (
             <>
                 {auth.uid ? <Redirect to='/create' /> :
-                    <div>
-                        <div id="grey-top">
-                        </div>
-                        <div className="container ">
+                    <>
+                        <div id="login-background"></div>
+                        <div id="login-content" className="container">
                             <div className="jumbotron jumbotron-fluid p-5 mt-0 mb-5">
                                 <h1 className="display-4 text-center mb-5">Logowanie</h1>
                                 <form onSubmit={this.handleSubmit}>
@@ -58,7 +63,7 @@ class Login extends Component {
                                 </form>
                             </div>
                         </div>
-                    </div>
+                    </>
                 }
             </>
         );
