@@ -89,7 +89,6 @@ class EntryDetails extends Component {
 const mapStateToProps = (state, ownProps) => {
 
     let id = ownProps.match.params.id;
-    console.log(state.firestore.ordered);
 
     if (ownProps.match.path.includes("entry-events-old")) {
         var events = state.firestore.data.eventsOld;
@@ -116,6 +115,9 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-        { collection: 'eventsOld' }
+        { collection: 'brewing' },
+        { collection: 'eventsNew' },
+        { collection: 'eventsOld' },
+        { collection: 'testing' }
     ])
 )(EntryDetails);
