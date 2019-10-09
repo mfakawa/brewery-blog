@@ -33,10 +33,15 @@ class Login extends Component {
             <>
                 {auth.uid ? <Redirect to='/create' /> :
                     <>
-                        <div id="login-background"></div>
+                        <div id="login-background">
+                            <div id="about-us-top-title" className="row h-100 m-0">
+                                <div className="col my-auto">
+                                    <h1 className="display-3 font-weight-bold font-italic text-center text-white">Logowanie</h1>
+                                </div>
+                            </div>
+                        </div>
                         <div id="login-content" className="container">
                             <div className="jumbotron jumbotron-fluid p-5 mt-0 mb-5">
-                                <h1 className="display-4 text-center mb-5">Logowanie</h1>
                                 <form onSubmit={this.handleSubmit}>
                                     <div className="form-group row">
                                         <label className="col-sm-2 col-form-label" htmlFor="email">Email</label>

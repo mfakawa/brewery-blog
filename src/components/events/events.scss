@@ -1,46 +1,4 @@
-.test {
-    position: relative;
-    height: 40vh;
-    top: -56px;
 
-    @media (max-width: 768px) {
-        top: 0;
-    }
-
-    .slider {
-
-        img {
-            object-fit: cover;
-            height: 40vh;
-            width: 100%;
-            filter: brightness(80%);
-        }
-    }
-
-    .title {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2;
-        display: flex;
-        justify-items: center;
-
-        div {
-            h1 {
-                @media (max-width: 992px) {
-                    font-size: 3.5rem;
-                    margin-right: 24px !important;
-                    margin-left: 24px !important;
-                }
-                @media (max-width: 576px) {
-                    font-size: 3rem;
-                }
-            }
-        }
-    }
-}
 
 #events-top {
     background-size: cover;

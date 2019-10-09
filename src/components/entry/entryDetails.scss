@@ -1,9 +1,11 @@
 #entry-details {
-    @media (max-width: 768px) {
-        position: relative;
-        top: 40px;
+
+    #entry-details-title-background {
+        background-color: rgb(245, 245, 245);
     }
+    
     #entry-details-title {
+
         @media (max-width: 768px) {
         font-size: 3rem; 
         text-align: center;
@@ -32,4 +34,8 @@
 #entry-details-content-body {
     line-height: 1.8;
     }
+}
+
+#entry-details-error {
+    height: 80vh;
 }

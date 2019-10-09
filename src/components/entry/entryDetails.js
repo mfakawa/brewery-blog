@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { firestoreConnect } from 'react-redux-firebase';
+import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import './entryDetails.scss';
 import EntryPN from './entryPN';
@@ -14,12 +14,13 @@ class EntryDetails extends Component {
         window.scrollTo(0, 0);
     }
 
+
     render() {
         const { id, entry, otherEntry } = this.props;
         if (entry) {
             return (
                 <div id="entry-details">
-                    <div className="jumbotron pb-5 pt-0 bg-transparent shadow-sm display-4">
+                    <div id="entry-details-title-background" className="jumbotron p-4 p-md-5  shadow-sm display-4">
                         <div id="entry-details-title" className="container">{entry.title}</div>
                     </div>
                     <div className="jumbotron jumbotron-fluid bg-transparent m-0 py-0">
@@ -44,20 +45,20 @@ class EntryDetails extends Component {
 
                                 if (index !== 0 && index + 1 < array.length) {
                                     return (
-                                        <div className="row m-auto py-4 py-md-5 justify-content-center" key={other.id}>
+                                        <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
                                             <EntryPN status={previous} />
                                             <EntryPN status={next} />
                                         </div>
                                     )
                                 } else if (index === 0) {
                                     return (
-                                        <div className="row m-auto py-4 py-md-5 justify-content-center">
+                                        <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
                                             <EntryPN status={next} />
                                         </div>
                                     )
                                 } else if (index + 1 === array.length) {
                                     return (
-                                        <div className="row m-auto py-4 py-md-5 justify-content-center">
+                                        <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
                                             <EntryPN status={previous} />
                                         </div>
                                     )
@@ -75,8 +76,8 @@ class EntryDetails extends Component {
             );
         } else {
             return (
-                <div className="container">
-                    <div className="jumbotron bg-white">
+                <div id="entry-details-error" className="jumbotron jumbotron-fluid bg-transparent">
+                    <div className="container">
                         <p>Loading...</p>
                     </div>
                 </div>
@@ -87,7 +88,8 @@ class EntryDetails extends Component {
 
 const mapStateToProps = (state, ownProps) => {
 
-    const id = ownProps.match.params.id;
+    let id = ownProps.match.params.id;
+    console.log(state.firestore.ordered);
 
     if (ownProps.match.path.includes("entry-events-old")) {
         var events = state.firestore.data.eventsOld;
@@ -98,7 +100,7 @@ const mapStateToProps = (state, ownProps) => {
     } else if (ownProps.match.path.includes("entry-brewing")) {
         events = state.firestore.data.brewing;
         otherEntry = state.firestore.ordered.brewing;
-    } else if (ownProps.match.path.includes("entry-testing")) {
+    } else if (ownProps.match.url.includes("entry-testing")) {
         events = state.firestore.data.testing;
         otherEntry = state.firestore.ordered.testing;
     }
@@ -113,7 +115,7 @@ const mapStateToProps = (state, ownProps) => {
 
 export default compose(
     connect(mapStateToProps),
-    // firestoreConnect([
-    //     { collection: 'eventsOld' }
-    // ])
+    firestoreConnect([
+        { collection: 'eventsOld' }
+    ])
 )(EntryDetails);

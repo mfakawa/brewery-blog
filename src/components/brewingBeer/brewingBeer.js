@@ -69,7 +69,7 @@ class BrewingBeer extends Component {
                     </div>
                 </div>
 
-                <div id="brewing-bottom" className="jumbotron m-0  p-0 bg-transparent">
+                <div id="brewing-bottom" className="jumbotron m-0 p-0 bg-transparent">
                     <div className="row m-auto py-4 py-md-5 justify-content-center">
                         {brewing &&
                             brewing.map((entry) => {
@@ -79,7 +79,6 @@ class BrewingBeer extends Component {
                             })}
                     </div>
                 </div>
-
             </div>
         )
     }

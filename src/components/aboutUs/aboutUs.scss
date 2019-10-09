@@ -17,10 +17,10 @@
             div {
                 h1 {
                     @media (max-width: 992px) {
-                        font-size: 4rem;
+                        font-size: 3.5rem;
                     }
                     @media (max-width: 576px) {
-                        font-size: 3.5rem;
+                        font-size: 2.5rem;
                     }
                 }
             }
@@ -87,7 +87,7 @@
 
             h1 {
                 @media (max-width: 576px) {
-                    font-size: 2.0rem;
+                    font-size: 1.8rem;
                     text-align: center;
                 }
             }

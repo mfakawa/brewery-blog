@@ -15,10 +15,10 @@
             div {
                 h1 {
                     @media (max-width: 992px) {
-                        font-size: 4rem;
+                        font-size: 3.5rem;
                     }
                     @media (max-width: 576px) {
-                        font-size: 3.5rem;
+                        font-size: 2.5rem;
                     }
                 }
             }
@@ -26,7 +26,7 @@
 }
 
 #contact-content {
-    margin-bottom: 100px !important;
+    margin-bottom: 150px !important;
 
     @media (max-width: 576px) {
         margin-bottom: 48px !important;
