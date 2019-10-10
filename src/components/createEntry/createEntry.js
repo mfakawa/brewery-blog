@@ -10,6 +10,8 @@ class CreateEntry extends Component {
         title: '',
         text1: '',
         text2: '',
+        description1: '',
+        description2: '',
         photo1: [],
         photo2: [],
         option: ''
@@ -75,8 +77,8 @@ class CreateEntry extends Component {
                                 <form onSubmit={this.handleSubmit}>
                                     <fieldset className="form-group">
                                         <div className="row">
-                                            <legend className="col-form-label col-sm-2 pt-0">Kategoria</legend>
-                                            <div className="col-sm-10">
+                                            <legend className="col-form-label col-sm-3 col-md-2 pt-0">Kategoria</legend>
+                                            <div className="col-sm-9 col-md-10">
                                                 <div className="form-check">
                                                     <input className="form-check-input" type="radio" name="option" id="option1" value="brewing" onChange={this.handleOption} />
                                                     <label className="form-check-label" htmlFor="option1">Warzenie</label>
@@ -97,35 +99,37 @@ class CreateEntry extends Component {
                                         </div>
                                     </fieldset>
                                     <div className="form-group row">
-                                        <label htmlFor="title" className="col-sm-2 col-form-label">Tytuł</label>
-                                        <div className="col-sm-10">
-                                            <input type="text" className="form-control" id="title" placeholder="wpisz tytuł..." onChange={this.handleChange} />
-                                        </div>
+                                        <label htmlFor="title" className="col-sm-3 col-md-2 col-form-label">Tytuł</label>
+                                        <input type="text" className="form-control col-sm-9 col-md-10" id="title" placeholder="wpisz tytuł..." onChange={this.handleChange} />
                                     </div>
                                     <div className="form-group row">
-                                        <label htmlFor="text1" className="col-sm-2 col-form-label">Treść 1</label>
-                                        <div className="col-sm-10">
-                                            <textarea type="text" className="form-control" id="text1" placeholder="wpisz treść..." onChange={this.handleChange} />
-                                        </div>
+                                        <label htmlFor="text1" className="col-sm-3 col-md-2 col-form-label">Treść 1</label>
+                                        <textarea type="text" className="form-control col-sm-9 col-md-10" id="text1" placeholder="wpisz treść..." onChange={this.handleChange} />
                                     </div>
                                     <div className="form-group row">
-                                        <label htmlFor="text2" className="col-sm-2 col-form-label">Treść 2</label>
-                                        <div className="col-sm-10">
-                                            <textarea type="text" className="form-control" id="text2" placeholder="wpisz treść..." onChange={this.handleChange} />
-                                        </div>
+                                        <label htmlFor="text2" className="col-sm-3 col-md-2 col-form-label">Treść 2</label>
+                                        <textarea type="text" className="form-control col-sm-9 col-md-10" id="text2" placeholder="wpisz treść..." onChange={this.handleChange} />
                                     </div>
                                     <div className="form-group">
-                                        <div className="photo1">
-                                            <label htmlFor="photo1">Zdjęcie 1</label>
-                                            <input type="file" className="form-control-file mb-2" id="photo1" onChange={this.handleImage} />
+                                        <div className="row mb-2">
+                                            <label htmlFor="photo1" className="col-md-2">Zdjęcie 1</label>
+                                            <input type="file" className="form-control-file  col-md-10" id="photo1" onChange={this.handleImage} />
                                         </div>
-                                        <div className="photo2">
-                                            <label htmlFor="photo2">Zdjęcie 2 (wyświetlane w sliderze)</label>
-                                            <input type="file" className="form-control-file" id="photo2" onChange={this.handleImage} />
+                                        <div className="row">
+                                            <label htmlFor="photo2" className="col-md-2">Zdjęcie 2 (slider)</label>
+                                            <input type="file" className="form-control-file col-md-10" id="photo2" onChange={this.handleImage} />
                                         </div>
                                     </div>
-                                    <img src={photo1} alt="" />
-                                    <img src={photo2} alt="" />
+                                    <img className="m-2" src={photo1} alt="" />
+                                    <img className="m-2" src={photo2} alt="" />
+                                    <div className="form-group row">
+                                        <label htmlFor="description1" className="col-sm-3 col-lg-2 col-form-label">Opis zdjęcia 1</label>
+                                        <input type="text" className="form-control col-sm-9 col-lg-10" id="description1" placeholder="wpisz treść..." onChange={this.handleChange} />
+                                    </div>
+                                    <div className="form-group row">
+                                        <label htmlFor="description2" className="col-sm-3 col-lg-2 col-form-label">Opis zdjęcia 2</label>
+                                        <input type="text" className="form-control col-sm-9 col-lg-10" id="description2" placeholder="wpisz treść..." onChange={this.handleChange} />
+                                    </div>
                                     <div className="form-group row">
                                         <div className="col text-center">
                                             <button type="submit" className="btn btn-primary mt-4">Zapisz</button>

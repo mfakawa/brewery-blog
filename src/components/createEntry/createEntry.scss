@@ -1,13 +1,14 @@
-
-
 #create-entry {
     
+    label { 
+        margin-bottom: 0;
+    }
+
     textarea {
         height: 200px;
     }
 
     img {
-        margin-right: 20px; 
         height: auto;
         width: 200px;
     }

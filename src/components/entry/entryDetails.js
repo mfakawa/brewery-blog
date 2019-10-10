@@ -26,8 +26,11 @@ class EntryDetails extends Component {
                     <div className="jumbotron jumbotron-fluid bg-transparent m-0 py-0">
                         <div className="container ">
                             <p id="entry-details-content-date" className="mb-4 pb-3 text-muted border-bottom border-secondary">Autor: {entry.nick} <span>data publikacji: {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</span></p>
+                            <img src={entry.photo1} alt="" className="mb-2" />
+                            <p className="font-italic border-bottom pb-2"><small>{entry.description1}</small></p>
                             <p id="entry-details-content-body" className="mb-4 text-justify">{entry.text1}</p>
-                            <img src={entry.image} alt="zdjęcie piwa" className="mb-4" />
+                            <img src={entry.photo2} alt="" className="mb-2" />
+                            <p className="font-italic border-bottom pb-2"><small>{entry.description2}</small></p>
                             <p id="entry-details-content-body" className="text-justify mb-4 mb-md-5 pb-4 border-bottom border-dark">{entry.text2}</p>
                         </div>
                         <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
