@@ -1,7 +1,14 @@
-textarea {
-    height: 200px !important;
-}
 
-img {
-    height: 200px;
+
+#create-entry {
+    
+    textarea {
+        height: 200px;
+    }
+
+    img {
+        margin-right: 20px; 
+        height: auto;
+        width: 200px;
+    }
 }

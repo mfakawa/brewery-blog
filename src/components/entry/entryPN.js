@@ -19,7 +19,7 @@ class EntryPN extends Component {
                 <Link to={status.id} className="text-decoration-none text-dark">
                     <div className="row pb-3 mb-3 pb-md-5 mb-md-5 border-bottom border-dark">
                         <div id="all-style" className="row align-items-center m-0 p-3">
-                            <div id="img-gray-style" className="col-md-6 p-0">
+                            <div id="img-style" className="col-md-6 p-0">
                                 <img src={status.image} className="card-img-top img-fluid" alt="single-entry-img" />
                             </div>
                             <div id="text-style" className="col-md-6">

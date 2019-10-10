@@ -10,55 +10,67 @@ class CreateEntry extends Component {
         title: '',
         text1: '',
         text2: '',
-        image: [],
+        photo1: [],
+        photo2: [],
         option: ''
     }
 
-    handleOption = (date) => {
+    handleOption = (data) => {
         this.setState({
-            option: date.target.value
+            option: data.target.value
         })
     }
 
-    handleChange = (date) => {
+    handleChange = (data) => {
         this.setState({
-            [date.target.id]: date.target.value
+            [data.target.id]: data.target.value
         })
     }
 
-    handleImage = (date) => {
-        const imageFiles = date.target.files;
-        const file = imageFiles[0];
+    handleImage = (data) => {
 
-        const render = new FileReader();
+        var imageFilesId = data.target.id;
+        const file = data.target.files[0];
 
-        render.onloadend = () => {
-            this.setState({
-                image: this.state.image.concat(render.result)
-            })
-        }
-        render.readAsDataURL(file);
+        if (data.target.files[0].type.includes("image")) {
+
+            var render = new FileReader();
+
+            render.onloadend = () => {
+                if (this.state[imageFilesId] == false) {
+                    this.setState({
+                        [imageFilesId]: this.state[imageFilesId].concat(render.result)
+                    })
+                }
+                else {
+                    this.state[imageFilesId] = [];
+                    this.setState({
+                        [imageFilesId]: this.state[imageFilesId].concat(render.result)
+                    })
+                }
+            }
+            render.readAsDataURL(file);
+        } else { }
     }
 
-    handleSubmit = (date) => {
-        date.preventDefault();
+    handleSubmit = (data) => {
+        data.preventDefault();
         this.props.createEntry(this.state);
         this.props.history.push('/');
-
     }
 
     render() {
-        const { image } = this.state;
+        const { photo1, photo2 } = this.state;
         const { auth } = this.props;
+
 
         return (
             <>
                 {auth.uid ? (
-                    <div>
+                    <div id="create-entry">
                         <div id="grey-top">
                         </div>
                         <div className="container">
-
                             <div className="jumbotron jumbotron-fluid px-5 mt-0 mb-5">
                                 <form onSubmit={this.handleSubmit}>
                                     <fieldset className="form-group">
@@ -103,10 +115,17 @@ class CreateEntry extends Component {
                                         </div>
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="file">Zdjęcie</label>
-                                        <input type="file" className="form-control-file" id="file" onChange={this.handleImage} />
+                                        <div className="photo1">
+                                            <label htmlFor="photo1">Zdjęcie 1</label>
+                                            <input type="file" className="form-control-file mb-2" id="photo1" onChange={this.handleImage} />
+                                        </div>
+                                        <div className="photo2">
+                                            <label htmlFor="photo2">Zdjęcie 2 (wyświetlane w sliderze)</label>
+                                            <input type="file" className="form-control-file" id="photo2" onChange={this.handleImage} />
+                                        </div>
                                     </div>
-                                    <img src={image} alt="" />
+                                    <img src={photo1} alt="" />
+                                    <img src={photo2} alt="" />
                                     <div className="form-group row">
                                         <div className="col text-center">
                                             <button type="submit" className="btn btn-primary mt-4">Zapisz</button>

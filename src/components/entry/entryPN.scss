@@ -1,19 +1,15 @@
-#img-style {
-    overflow: hidden;
+#all-style {
+    transition: 0.5s all;
 
+    #img-style {
+        overflow: hidden;
+    
         img {
             transition: 0.5s all;
         }
     }
-
-#img-gray-style {
-    overflow: hidden;
-    }
-
-#all-style {
-    transition: 0.5s all;
-
-       &:hover {
+    
+    &:hover {
         box-shadow: 2px 2px 10px grey;
 
         img {
