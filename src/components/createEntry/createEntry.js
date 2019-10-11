@@ -17,6 +17,10 @@ class CreateEntry extends Component {
         option: ''
     }
 
+    componentDidMount = () => {
+        window.scrollTo(0, 0);
+    }
+
     handleOption = (data) => {
         this.setState({
             option: data.target.value
@@ -39,7 +43,7 @@ class CreateEntry extends Component {
             var render = new FileReader();
 
             render.onloadend = () => {
-                if (this.state[imageFilesId] == false) {
+                if (this.state[imageFilesId] === false) {
                     this.setState({
                         [imageFilesId]: this.state[imageFilesId].concat(render.result)
                     })
@@ -52,7 +56,12 @@ class CreateEntry extends Component {
                 }
             }
             render.readAsDataURL(file);
-        } else { }
+        } else {
+            this.setState({
+                [imageFilesId]: ""
+            })
+            data.target.value = "";
+        }
     }
 
     handleSubmit = (data) => {
@@ -65,7 +74,6 @@ class CreateEntry extends Component {
         const { photo1, photo2 } = this.state;
         const { auth } = this.props;
 
-
         return (
             <>
                 {auth.uid ? (
@@ -74,6 +82,7 @@ class CreateEntry extends Component {
                         </div>
                         <div className="container">
                             <div className="jumbotron jumbotron-fluid px-5 mt-0 mb-5">
+                                <h1 className="text-center mb-5 ">Nowy wpis</h1>
                                 <form onSubmit={this.handleSubmit}>
                                     <fieldset className="form-group">
                                         <div className="row">

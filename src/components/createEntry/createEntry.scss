@@ -1,5 +1,11 @@
 #create-entry {
     
+    h1 {
+        @media (max-width: 576px) {
+            font-size: 2rem;
+        }
+    }
+
     label { 
         margin-bottom: 0;
     }

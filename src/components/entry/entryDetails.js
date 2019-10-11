@@ -6,6 +6,7 @@ import './entryDetails.scss';
 import EntryPN from './entryPN';
 import moment from 'moment';
 import 'moment/locale/pl';
+import { conditionalExpression } from '@babel/types';
 
 
 class EntryDetails extends Component {
@@ -24,56 +25,76 @@ class EntryDetails extends Component {
                         <div id="entry-details-title" className="container">{entry.title}</div>
                     </div>
                     <div className="jumbotron jumbotron-fluid bg-transparent m-0 py-0">
-                        <div className="container ">
+                        <div className="container">
                             <p id="entry-details-content-date" className="mb-4 pb-3 text-muted border-bottom border-secondary">Autor: {entry.nick} <span>data publikacji: {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</span></p>
-                            <img src={entry.photo1} alt="" className="mb-2" />
+                            <div className="img-center">
+                                <img src={entry.photo1} alt="" className="mb-2" />
+                            </div>
                             <p className="font-italic border-bottom pb-2"><small>{entry.description1}</small></p>
                             <p id="entry-details-content-body" className="mb-4 text-justify">{entry.text1}</p>
-                            <img src={entry.photo2} alt="" className="mb-2" />
+                            <div className="img-center">
+                                <img src={entry.photo2} alt="" className="mb-2" />
+                            </div>
                             <p className="font-italic border-bottom pb-2"><small>{entry.description2}</small></p>
                             <p id="entry-details-content-body" className="text-justify mb-4 mb-md-5 pb-4 border-bottom border-dark">{entry.text2}</p>
-                        </div>
-                        <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
-                            <div className="row justify-content-center m-0">
-                                <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
-                            </div>
                         </div>
                     </div>
                     <div className="jumbotron p-0 m-0 bg-transparent">
                         {otherEntry && otherEntry.map((other, index, array) => {
-                            if (id === other.id) {
+                            if (array.length > 1) {
 
-                                let previous = array[index - 1];
-                                let next = array[index + 1];
+                                if (id === other.id) {
 
-                                if (index !== 0 && index + 1 < array.length) {
-                                    return (
-                                        <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
-                                            <EntryPN status={previous} />
-                                            <EntryPN status={next} />
-                                        </div>
-                                    )
-                                } else if (index === 0) {
-                                    return (
-                                        <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
-                                            <EntryPN status={next} />
-                                        </div>
-                                    )
-                                } else if (index + 1 === array.length) {
-                                    return (
-                                        <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
-                                            <EntryPN status={previous} />
-                                        </div>
-                                    )
+                                    let previous = array[index - 1];
+                                    let next = array[index + 1];
+
+                                    if (index !== 0 && index + 1 < array.length) {
+                                        return (
+                                            <div key={index} >
+                                                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
+                                                    <div className="row justify-content-center m-0">
+                                                        <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
+                                                    </div>
+                                                </div>
+                                                <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
+                                                    <EntryPN status={previous} />
+                                                    <EntryPN status={next} />
+                                                </div>
+                                            </div>
+                                        )
+                                    } else if (index === 0) {
+                                        return (
+                                            <div key={index} >
+                                                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
+                                                    <div className="row justify-content-center m-0">
+                                                        <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
+                                                    </div>
+                                                </div>
+                                                <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
+                                                    <EntryPN status={next} />
+                                                </div>
+                                            </div>
+                                        )
+                                    } else if (index + 1 === array.length) {
+                                        return (
+                                            <div key={index} >
+                                                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
+                                                    <div className="row justify-content-center m-0">
+                                                        <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
+                                                    </div>
+                                                </div>
+                                                <div className="row m-auto py-4 py-md-5 justify-content-center" >
+                                                    <EntryPN status={previous} />
+                                                </div>
+                                            </div>
+                                        )
+                                    }
                                 }
                             }
                             else {
-                                return (
-                                    null
-                                )
+                                return (null)
                             }
-                        }
-                        )}
+                        })}
                     </div>
                 </div>
             );

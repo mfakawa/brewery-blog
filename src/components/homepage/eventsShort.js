@@ -47,7 +47,7 @@ class EventsShort extends Component {
                                                 <div >
                                                     <div className="row m-0 p-0">
                                                         <div className=" col p-0 m-0">
-                                                            <img src={entry.image} alt="opis" key={entry.id} />
+                                                            <img src={entry.photo2} alt="" key={entry.id} />
                                                             <h2 className=" p-2 px-3">{entry.title}</h2>
                                                         </div>
                                                     </div>
@@ -59,7 +59,6 @@ class EventsShort extends Component {
                             })}
                         </Slider>
                     </div>
-
                 </div>
                 <div id="events-short-youtube" className="row m-0 pb-4 p-2 p-lg-5 text-center justify-content-center">
                     <div className="col-lg-2 pt-3 py-lg-5  text-lg-right">

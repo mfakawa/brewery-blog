@@ -38,7 +38,7 @@ class Navbar extends Component {
         return (
             <div className="jumbotron m-0 p-0 bg-transparent sticky-top">
                 <div className={this.state.className}>
-                    <nav id="navbar" className="navbar navbar-expand-md navbar-dark">
+                    <nav id="navbar" className="navbar navbar-dark navbar-expand-lg">
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
@@ -59,31 +59,35 @@ class Navbar extends Component {
                                 <li className="nav-item">
                                     <NavLink to='/testing' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Degustacje</span></NavLink>
                                 </li>
-                                <li className="nav-item">
-                                    <NavLink to='/login' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Logowanie</span></NavLink>
-                                </li>
+                                {!this.props.auth.uid &&
+                                    <>
+                                        <li className="nav-item">
+                                            <NavLink to='/login' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Logowanie</span></NavLink>
+                                        </li>
+                                    </>
+                                }
                                 <li className="nav-item">
                                     <NavLink to='/contact' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Kontakt</span></NavLink>
                                 </li>
                                 {this.props.auth.uid &&
                                     <>
                                         <li className="nav-item">
-                                            <NavLink to='/create' className="nav-link">Nowy wpis</NavLink>
+                                            <NavLink to='/create' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Nowy wpis</span></NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='/signup' className="nav-link">Dodaj użytkownika</NavLink>
+                                            <NavLink to='/signup' className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Dodaj użytkownika</span></NavLink>
                                         </li>
                                         <li className="nav-item">
-                                            <NavLink to='/' onClick={this.props.signOut} className="nav-link">Wyloguj się</NavLink>
+                                            <NavLink to='/' onClick={this.props.signOut} className="nav-link"><span data-toggle="collapse" data-target=".navbar-collapse.show">Wyloguj</span></NavLink>
                                         </li>
                                     </>}
                             </ul>
                         </div>
                         {!isEmpty &&
-                            <img id="navbar" className="rounded-circle float-right" src={image} alt='opis' />
+                            <img id="navbar" className="rounded-circle float-right" src={image} alt="" />
                         }
                     </nav>
-                </div >
+                </div>
             </div >
         );
     }

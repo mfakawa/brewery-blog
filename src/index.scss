@@ -74,6 +74,13 @@ body {
         }
     }
 
+#grey-top {
+    position: relative;
+    top: -56px;
+    height: 56px;
+    background-color: #343A40;
+}
+
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 // @import '~bootstrap/scss/mixins/_breakpoints';

@@ -20,7 +20,7 @@ class EntryPN extends Component {
                     <div className="row pb-3 mb-3 pb-md-5 mb-md-5 border-bottom border-dark">
                         <div id="all-style" className="row align-items-center m-0 p-3">
                             <div id="img-style" className="col-md-6 p-0">
-                                <img src={status.image} className="card-img-top img-fluid" alt="" />
+                                <img src={status.photo1} className="card-img-top img-fluid" alt="" />
                             </div>
                             <div id="text-style" className="col-md-6">
                                 <div className="card-body p-0">

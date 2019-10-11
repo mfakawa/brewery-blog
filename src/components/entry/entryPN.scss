@@ -5,6 +5,8 @@
         overflow: hidden;
     
         img {
+            max-height: 300px;
+            width: auto;
             transition: 0.5s all;
         }
     }

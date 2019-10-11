@@ -1,0 +1,12 @@
+#sign-up {
+    h1 {
+        @media (max-width: 576px) {
+            font-size: 2rem;
+        }
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
