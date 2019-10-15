@@ -17,12 +17,13 @@ class EntryDetails extends Component {
 
     render() {
         const { id, entry, otherEntry } = this.props;
-        console.log(otherEntry)
         if (entry) {
             return (
                 <div id="entry-details">
-                    <div id="entry-details-title-background" className="jumbotron p-4 p-md-5  shadow-sm display-4">
-                        <div id="entry-details-title" className="container">{entry.title}</div>
+                    <div className="grey-top">
+                    </div>
+                    <div id="entry-details-title-background" className="jumbotron p-3 p-md-5 bg-light shadow-sm">
+                        <h1 className="container">{entry.title}</h1>
                     </div>
                     <div className="jumbotron jumbotron-fluid bg-transparent m-0 py-0">
                         <div className="container">

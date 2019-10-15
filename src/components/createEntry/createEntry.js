@@ -80,7 +80,7 @@ class CreateEntry extends Component {
             <>
                 {auth.uid ? (
                     <div id="create-entry">
-                        <div id="grey-top">
+                        <div className="grey-top">
                         </div>
                         <div className="container">
                             <div className="jumbotron jumbotron-fluid px-5 mt-0 mb-5">
