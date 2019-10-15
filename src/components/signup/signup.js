@@ -46,7 +46,9 @@ class Signup extends Component {
                     })
                 }
                 else {
-                    this.state.image = [];
+                    this.setState({
+                        image: ""
+                    })
                     this.setState({
                         image: this.state.image.concat(render.result)
                     })

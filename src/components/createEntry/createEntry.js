@@ -49,7 +49,9 @@ class CreateEntry extends Component {
                     })
                 }
                 else {
-                    this.state[imageFilesId] = [];
+                    this.setState({
+                        [imageFilesId]: ""
+                    })
                     this.setState({
                         [imageFilesId]: this.state[imageFilesId].concat(render.result)
                     })

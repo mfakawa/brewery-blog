@@ -6,7 +6,6 @@ import './entryDetails.scss';
 import EntryPN from './entryPN';
 import moment from 'moment';
 import 'moment/locale/pl';
-import { conditionalExpression } from '@babel/types';
 
 
 class EntryDetails extends Component {
@@ -18,6 +17,7 @@ class EntryDetails extends Component {
 
     render() {
         const { id, entry, otherEntry } = this.props;
+        console.log(otherEntry)
         if (entry) {
             return (
                 <div id="entry-details">
@@ -40,6 +40,11 @@ class EntryDetails extends Component {
                         </div>
                     </div>
                     <div className="jumbotron p-0 m-0 bg-transparent">
+                        <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
+                            <div className="row justify-content-center m-0">
+                                <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
+                            </div>
+                        </div>
                         {otherEntry && otherEntry.map((other, index, array) => {
                             if (array.length > 1) {
 
@@ -50,42 +55,21 @@ class EntryDetails extends Component {
 
                                     if (index !== 0 && index + 1 < array.length) {
                                         return (
-                                            <div key={index} >
-                                                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
-                                                    <div className="row justify-content-center m-0">
-                                                        <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
-                                                    </div>
-                                                </div>
-                                                <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
-                                                    <EntryPN status={previous} />
-                                                    <EntryPN status={next} />
-                                                </div>
+                                            <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
+                                                <EntryPN status={previous} />
+                                                <EntryPN status={next} />
                                             </div>
                                         )
                                     } else if (index === 0) {
                                         return (
-                                            <div key={index} >
-                                                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
-                                                    <div className="row justify-content-center m-0">
-                                                        <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
-                                                    </div>
-                                                </div>
-                                                <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
-                                                    <EntryPN status={next} />
-                                                </div>
+                                            <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
+                                                <EntryPN status={next} />
                                             </div>
                                         )
                                     } else if (index + 1 === array.length) {
                                         return (
-                                            <div key={index} >
-                                                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
-                                                    <div className="row justify-content-center m-0">
-                                                        <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
-                                                    </div>
-                                                </div>
-                                                <div className="row m-auto py-4 py-md-5 justify-content-center" >
-                                                    <EntryPN status={previous} />
-                                                </div>
+                                            <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
+                                                <EntryPN status={previous} />
                                             </div>
                                         )
                                     }
@@ -139,9 +123,9 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
     connect(mapStateToProps),
     firestoreConnect([
-        { collection: 'brewing' },
-        { collection: 'eventsNew' },
-        { collection: 'eventsOld' },
-        { collection: 'testing' }
+        { collection: 'brewing', orderBy: ['createAt', 'desc'] },
+        { collection: 'eventsNew', orderBy: ['createAt', 'desc'] },
+        { collection: 'eventsOld', orderBy: ['createAt', 'desc'] },
+        { collection: 'testing', orderBy: ['createAt', 'desc'] }
     ])
 )(EntryDetails);
