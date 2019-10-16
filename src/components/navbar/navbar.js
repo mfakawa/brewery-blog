@@ -19,7 +19,6 @@ class Navbar extends Component {
 
     componentWillUnmount = () => {
         window.removeEventListener('scroll', this.handleScroll);
-        window.removeEventListener('compositionend', this.handleNavbarStyle);
     }
 
     handleScroll = () => {
@@ -33,11 +32,6 @@ class Navbar extends Component {
                 NavbarBackground: 'bg-transparent'
             });
         }
-        console.log(this.state.NavbarBackground)
-        console.log(this.state.NavbarTitle)
-        console.log(window.location.pathname)
-        console.log(window.screen.width)
-        console.log(window.screen.height)
     }
 
     render() {
@@ -82,12 +76,10 @@ class Navbar extends Component {
                                 {this.props.auth.uid &&
                                     <>
                                         <li className="nav-item dropdown text-right">
-                                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Dodaj                                                        </a>
+                                            <span className="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dodaj</span>
                                             <div className=" dropdown-menu text-right bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                                                <NavLink to='/create' className="dropdown-item text-white nav-link bg-transparent"><span data-toggle="collapse" data-target=".navbar-collapse.show">Nowy wpis</span></NavLink>
-                                                <NavLink to='/signup' className="dropdown-item text-white nav-link bg-transparent"><span data-toggle="collapse" data-target=".navbar-collapse.show">Nowy użytkownik</span></NavLink>
-
+                                                <NavLink to='/create' className="dropdown-item text-white bg-transparent"><span className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">Nowy wpis</span></NavLink>
+                                                <NavLink to='/signup' className="dropdown-item text-white bg-transparent"><span className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show">Nowy użytkownik</span></NavLink>
                                             </div>
                                         </li>
                                         <li className="nav-item text-right">

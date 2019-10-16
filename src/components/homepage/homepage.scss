@@ -1,4 +1,3 @@
-
 #homepage-top {
     height: 100vh;
     background: url(img/home_photo.jpg);
@@ -7,23 +6,14 @@
     background-position: center;
     position: relative;
     top: -56px;
-    
-      #homepage-top-cover {
+
+    #homepage-top-cover {
         background-color: rgba(0, 0, 0, 0.4);
         height: 100vh;
+    }
 
-        div {
-            div {
-                h1 {
-                    @media (max-width: 992px) {
-                        font-size: 4rem;
-                    }
-                    @media (max-width: 576px) {
-                        font-size: 3rem;
-                    }
-                }
-            }
-        }
+    @media (max-width: 767px){
+    display: none;
     }
 }
 
@@ -33,6 +23,17 @@
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+
+    h1 {
+        font-size: 3.5rem;
+
+        @media (max-width: 768px ) {
+            font-size: 2.5rem;
+        }
+        @media (max-width: 576px) {
+            font-size: 2rem;
+        }
+    }
 }
 
 #events-short {
@@ -43,43 +44,40 @@
     background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(117, 44, 2, 0.1)),
         url(img/pole.jpg);
     
-    div {
-        div {
-            h1 {
-                font-size: 3rem;
+        h1 {
+            font-size: 3.5rem;
 
-                @media (max-width: 576px) {
-                    font-size: 2rem;
-                }
+            @media (max-width: 768px ) {
+                font-size: 3rem;
             }
+            @media (max-width: 576px) {
+                font-size: 2.25rem;
+            }
+        }
+
+    #events-short-mobile {
+        @media (min-width: 768px ) {
+            display: none;
         }
     }
 
-    
     #events-short-slider {
+        @media (max-width: 767px) {
+            display: none;
+        }
         
         h2 {
             width: 95%;
             background-color: rgba(0, 0, 0, 0.5);
             position: absolute;
-            top:40px;
-            left:30px;
+            top:30px;
+            left:40px;
             color: rgb(255, 255, 255);
 
             @media (max-width: 992px) {
-                font-size: 1.5rem;
-                width: 100%;
-                text-align: center;
-                top:0;
-                left:0;
-            }
-
-            @media (max-width: 576px) {
-                font-size: 0.8rem;
-                width: 100%;
-                text-align: center;
-                top:0;
-                left:0;
+                font-size: 1.75rem;
+                top:20px;
+                left:30px;
             }
         }
     }
@@ -120,7 +118,7 @@
                     height: 50vh;
                     width: 50vw;
 
-                    @media (max-width: 992px) {
+                    @media (max-width: 991px) {
                         height: 40vh;
                         width: 80vw;
                     }

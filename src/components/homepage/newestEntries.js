@@ -15,31 +15,38 @@ class NewestEntries extends Component {
     render() {
         const { brewing, testing } = this.props;
         return (
-            <div id="newest-entries">
-                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
-                    <div className="row justify-content-center m-0">
-                        <h1 className="m-4 my-sm-5 display-4 font-italic font-weight-bold text-center text-dark">Co się w kuflu pieni</h1>
+            <>
+                <div id="homepage-top" className="jumbotron jumbotron-fluid bg-white m-0 p-0">
+                    <div id="homepage-top-cover">
+                        <div className="row h-100 m-0">
+                            <div className="col my-auto">
+                                <h1 className="display-2 font-weight-bold font-italic text-white text-center">Pięćdziesiąt twarzy krafta</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="jumbotron p-0 m-0 bg-transparent">
-                    <div className="row m-auto py-4 py-md-5 justify-content-center">
-                        {brewing && brewing.map((entry, index) => {
-                            for (index; index < 2; index++) {
-                                return (
-                                    <Entry entry={entry} key={entry.id} address='/entry-brewing/' />
-                                )
-                            }
-                        })}
-                        {testing && testing.map((entry, index) => {
-                            for (index; index < 2; index++) {
-                                return (
-                                    <Entry entry={entry} key={entry.id} address='/entry-testing/' />
-                                )
-                            }
-                        })}
+                <div id="newest-entries">
+                    <h1 className="pb-2 mb-0 mt-4 mx-2 mt-md-0 mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Nowości</h1>
+                    <div className="jumbotron p-0 m-0 bg-transparent">
+                        <div className="row m-auto py-3 py-md-4 justify-content-center">
+                            {brewing && brewing.map((entry, index) => {
+                                for (index; index < 2; index++) {
+                                    return (
+                                        <Entry entry={entry} key={entry.id} address='/entry-brewing/' />
+                                    )
+                                }
+                            })}
+                            {testing && testing.map((entry, index) => {
+                                for (index; index < 2; index++) {
+                                    return (
+                                        <Entry entry={entry} key={entry.id} address='/entry-testing/' />
+                                    )
+                                }
+                            })}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     }
 }

@@ -53,8 +53,6 @@ class Signup extends Component {
                         image: this.state.image.concat(render.result)
                     })
                 }
-                console.log(this.state.image)
-
             }
             render.readAsDataURL(file);
         } else {
@@ -64,7 +62,6 @@ class Signup extends Component {
             data.target.value = "";
         }
     }
-
 
     render() {
         const { authError, auth } = this.props;
