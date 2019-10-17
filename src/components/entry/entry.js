@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/pl';
+import './entry.scss';
 
 
 const Entry = ({ entry, address }) => {
@@ -15,7 +16,7 @@ const Entry = ({ entry, address }) => {
                         </div>
                         <div id="text-style" className="col-md-6">
                             <div className="card-body p-0">
-                                <h4 className="card-title mt-3 mt-md-0">{entry.title}</h4>
+                                <h4 className="card-title mb-2 mb-md-3 mt-3 mt-md-0">{entry.title}</h4>
                                 <h6 className="m-0">Autor: {entry.nick}</h6>
                                 <p className="m-0"><small className="text-dark"> Data publikacji: {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</small></p>
                             </div>

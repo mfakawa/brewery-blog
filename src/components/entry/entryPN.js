@@ -1,37 +1,57 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import 'moment/locale/pl';
-import { Link } from 'react-router-dom';
-import './entryPN.scss';
+import Entry from './entry';
 
 
 class EntryPN extends Component {
 
-    componentDidMount = () => {
-        window.scrollTo(0, 0);
-    }
-
     render() {
-        const { status } = this.props;
-
+        const { otherEntry, id } = this.props;
         return (
-            <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5">
-                <Link to={status.id} className="text-decoration-none text-dark">
-                    <div className="row pb-3 mb-3 pb-md-5 mb-md-5 border-bottom border-dark">
-                        <div id="all-style" className="row align-items-center m-0 p-3">
-                            <div id="img-style" className="col-md-6 p-0">
-                                <img src={status.photo1} className="card-img-top img-fluid" alt="" />
-                            </div>
-                            <div id="text-style" className="col-md-6">
-                                <div className="card-body p-0">
-                                    <h4 className="card-title mt-3 mt-md-0">{status.title}</h4>
-                                    <h6 className="m-0">Autor: {status.nick}</h6>
-                                    <p><small className="text-dark"> Data publikacji: {moment(status.createAt.toDate()).locale('pl').format('LLL')}</small></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Link>
+            <div className="jumbotron p-0 m-0 bg-transparent">
+                {otherEntry && otherEntry.map((other, index, array) => {
+                    if (array.length > 1) {
+
+                        if (id === other.id) {
+
+                            let previous = array[index - 1];
+                            let next = array[index + 1];
+
+                            if (index !== 0 && index + 1 < array.length) {
+                                return (
+                                    <div key={index}>
+                                        <h1 className="section-title pb-2 mb-0 mx-2 mt-4 mx-2 mb-md-4 mt-md-5 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Zobacz także</h1>
+                                        <div className="row m-auto py-4 py-md-5 justify-content-center">
+                                            <Entry entry={previous} address="" />
+                                            <Entry entry={next} address="" />
+                                        </div>
+                                    </div>
+                                )
+                            } else if (index === 0) {
+                                return (
+                                    <div key={index}>
+                                        <h1 className="section-title pb-2 mb-0 mx-2 mt-4 mx-2 mb-md-4 mt-md-5 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Zobacz także</h1>
+                                        <div className="row m-auto py-4 py-md-5 justify-content-center">
+                                            <Entry entry={next} address="" />
+                                        </div>
+                                    </div>
+                                )
+                            } else if (index + 1 === array.length) {
+                                return (
+                                    <div key={index}>
+                                        <h1 className="section-title pb-2 mb-0 mx-2 mt-4 mx-2 mb-md-4 mt-md-5 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Zobacz także</h1>
+                                        <div className="row m-auto py-4 py-md-5 justify-content-center">
+                                            <Entry entry={previous} address="" />
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        }
+                    }
+                    else {
+                        return (null)
+                    }
+                })}
             </div>
         )
     }

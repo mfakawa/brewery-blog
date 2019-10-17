@@ -42,22 +42,13 @@ class BrewingBeer extends Component {
                             <img src={photo3} alt="events-photo3" />
                         </Slider>
                     </div>
-                    <div className="title">
+                    <div className="head-title">
                         <div className="row mx-auto align-items-center">
                             <h1 className="display-3 font-weight-bold font-italic text-center text-white">Praca, która owocuje smakiem</h1>
                         </div>
                     </div>
                 </div>
-
-
-                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
-                    <div className="row justify-content-center m-0">
-                        <h1 className="m-3 mt-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Warzenie ze Sztachetą</h1>
-                    </div>
-                    <div className="row justify-content-center m-0">
-                        <p className="lead font-italic text-secondary text-center mb-4">Jak zacząć warzyć piwo w domowych warunkach</p>
-                    </div>
-                </div>
+                <h1 className="section-title pb-2 mb-0 mt-4 mx-2 mt-md-0 mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Warzenie ze Sztachetą</h1>
                 <div className="row m-3 m-ms-3 m-lg-5 p-3 border-bottom border-dark align-items-center justify-content-center">
                     <div className="col-lg-7 p-0 pr-lg-3">
                         <p id="brewing-beer-content" className="text-justify lead">W tym miejscu będę chciał podzielić  się z Wami rzeczami związanymi z warzeniem piwa w domu. Niedługo minie rok od mojej pierwszej warki. Chcę również zawczasu nadmienić, że cały czas uczę się nowych rzeczy, więc nie zawsze wszystko wychodzi zgodnie z założonym planem, aczkolwiek muszę przyznać, że do tej pory większość „wpadek” wyszła na plus. Zaznaczę też, że w chwili  obecnej głównie skupiam się na warzeniu  piwa z ekstraktów, ale z własnym chmieleniem (po prostu warzenie z  zacieraniem pochłania bardzo dużo czasu, którego nie rzadko mi brakuje).

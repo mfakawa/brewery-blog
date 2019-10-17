@@ -14,6 +14,9 @@ class EntryDetails extends Component {
         window.scrollTo(0, 0);
     }
 
+    componentDidUpdate = () => {
+        window.scrollTo(0, 0);
+    }
 
     render() {
         const { id, entry, otherEntry } = this.props;
@@ -22,7 +25,7 @@ class EntryDetails extends Component {
                 <div id="entry-details">
                     <div className="grey-top">
                     </div>
-                    <div id="entry-details-title-background" className="jumbotron p-3 p-md-5 bg-light shadow-sm">
+                    <div className="jumbotron mt-3 mt-lg-0 p-3 p-md-5 bg-light shadow-sm">
                         <h1 className="container">{entry.title}</h1>
                     </div>
                     <div className="jumbotron jumbotron-fluid bg-transparent m-0 py-0">
@@ -37,50 +40,10 @@ class EntryDetails extends Component {
                                 <img src={entry.photo2} alt="" className="mb-2" />
                             </div>
                             <p className="font-italic border-bottom pb-2"><small>{entry.description2}</small></p>
-                            <p id="entry-details-content-body" className="text-justify mb-4 mb-md-5 pb-4 border-bottom border-dark">{entry.text2}</p>
+                            <p id="entry-details-content-body" className="text-justify mb-4 mb-md-5 pb-4 border-bottom">{entry.text2}</p>
                         </div>
                     </div>
-                    <div className="jumbotron p-0 m-0 bg-transparent">
-                        <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
-                            <div className="row justify-content-center m-0">
-                                <h1 className="m-3 my-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Zobacz także</h1>
-                            </div>
-                        </div>
-                        {otherEntry && otherEntry.map((other, index, array) => {
-                            if (array.length > 1) {
-
-                                if (id === other.id) {
-
-                                    let previous = array[index - 1];
-                                    let next = array[index + 1];
-
-                                    if (index !== 0 && index + 1 < array.length) {
-                                        return (
-                                            <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
-                                                <EntryPN status={previous} />
-                                                <EntryPN status={next} />
-                                            </div>
-                                        )
-                                    } else if (index === 0) {
-                                        return (
-                                            <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
-                                                <EntryPN status={next} />
-                                            </div>
-                                        )
-                                    } else if (index + 1 === array.length) {
-                                        return (
-                                            <div className="row m-auto py-4 py-md-5 justify-content-center" key={index}>
-                                                <EntryPN status={previous} />
-                                            </div>
-                                        )
-                                    }
-                                }
-                            }
-                            else {
-                                return (null)
-                            }
-                        })}
-                    </div>
+                    <EntryPN otherEntry={otherEntry} id={id} />
                 </div>
             );
         } else {

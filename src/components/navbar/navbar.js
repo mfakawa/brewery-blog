@@ -42,7 +42,7 @@ class Navbar extends Component {
             <div className="jumbotron m-0 p-0 bg-transparent sticky-top">
                 <div className={this.state.NavbarBackground}>
                     <nav id={this.state.navbarState} className={`${navbarExpand} navbar navbar-dark justify-content-end`} >
-                        <p id={this.state.NavbarTitle} className="text-white text-uppercase mb-0 align-items-start">Pięćdziesiąt <br></br> twarzy krafta</p>
+                        <NavLink to="/"><p id={this.state.NavbarTitle} className="text-white text-uppercase mb-0 align-items-start">Pięćdziesiąt <br></br> twarzy krafta</p></NavLink>
                         <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                             <div className="navbar-toggler-icon "></div>
                         </button>

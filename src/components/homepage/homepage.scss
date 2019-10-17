@@ -23,17 +23,6 @@
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
-
-    h1 {
-        font-size: 3.5rem;
-
-        @media (max-width: 768px ) {
-            font-size: 2.5rem;
-        }
-        @media (max-width: 576px) {
-            font-size: 2rem;
-        }
-    }
 }
 
 #events-short {
@@ -44,16 +33,6 @@
     background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(117, 44, 2, 0.1)),
         url(img/pole.jpg);
     
-        h1 {
-            font-size: 3.5rem;
-
-            @media (max-width: 768px ) {
-                font-size: 3rem;
-            }
-            @media (max-width: 576px) {
-                font-size: 2.25rem;
-            }
-        }
 
     #events-short-mobile {
         @media (min-width: 768px ) {

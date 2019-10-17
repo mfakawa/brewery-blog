@@ -41,23 +41,22 @@ class Testing extends Component {
                             <img src={photo3} alt="events-photo3" />
                         </Slider>
                     </div>
-                    <div className="title">
+                    <div className="head-title">
                         <div className="row mx-auto align-items-center">
                             <h1 className="display-3 font-weight-bold font-italic text-center text-white">Smak, do którego wracasz</h1>
                         </div>
                     </div>
                 </div>
-
-
-                <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
+                <h1 className="section-title pb-2 mb-0 mx-2 mt-4 mt-md-0 mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Piwo</h1>
+                {/* <div id="head-shadow" className="jumbotron jumbotron-fluid m-0 p-0">
                     <div className="row justify-content-center m-0">
                         <h1 className="m-3 mt-sm-4 display-4 font-italic font-weight-bold text-center text-dark">Piwo</h1>
                     </div>
                     <div className="row justify-content-center m-0">
                         <p className="lead font-italic text-secondary text-center mb-4">Dobrze znane i mniej znane</p>
                     </div>
-                </div>
-                <div id="testing-bottom" className="jumbotron m-0  p-0 bg-transparent">
+                </div> */}
+                <div id="testing-bottom" className="jumbotron m-0 p-0 bg-transparent">
                     <div className="row m-auto py-4 py-md-5 justify-content-center">
                         {testing &&
                             testing.map((entry) => {
