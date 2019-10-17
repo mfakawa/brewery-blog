@@ -37,15 +37,19 @@ body {
     
         @media (max-width: 768px) {
             top: 0;
+            height: 40vh;
         }
     
         .slider {
-    
             img {
                 object-fit: cover;
                 height: 40vh;
                 width: 100%;
                 filter: brightness(80%);
+
+                @media (max-width: 768px) {
+                    height: 40vh;
+                }
             }
         }
     
@@ -75,13 +79,24 @@ body {
     }
 
     h1.section-title {
-            font-size: 3.5rem;
+            font-size: 3rem;
 
             @media (max-width: 768px ) {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             @media (max-width: 576px) {
-                font-size: 2.25rem;
+                font-size: 2rem;
+            }
+    }
+
+    h2.pn-title {
+        font-size: 2rem;
+
+            @media (max-width: 768px ) {
+                font-size: 2rem;
+            }
+            @media (max-width: 576px) {
+                font-size: 1.5rem;
             }
     }
 

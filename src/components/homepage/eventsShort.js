@@ -38,7 +38,9 @@ class EventsShort extends Component {
                         {eventsOld && eventsOld.map((entry, index) => {
                             for (index; index < 3; index++) {
                                 return (
-                                    <Entry entry={entry} key={entry.id} address='/entry-events-old/' />
+                                    <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5" key={entry.id}>
+                                        <Entry entry={entry} address='/entry-events-old/' />
+                                    </div>
                                 )
                             }
                         })}
@@ -56,7 +58,7 @@ class EventsShort extends Component {
                                                 <div >
                                                     <div className="row m-0 p-0">
                                                         <div className=" col p-0 m-0">
-                                                            <img src={entry.photo2} alt="" key={entry.id} />
+                                                            <img src={entry.photo2} alt="" />
                                                             <h2 className=" p-2 px-3">{entry.title}</h2>
                                                         </div>
                                                     </div>

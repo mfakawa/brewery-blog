@@ -54,7 +54,9 @@ class Events extends Component {
                     <div className="row m-auto py-4 py-md-5 justify-content-center">
                         {eventsNew && eventsNew.map((entry) => {
                             return (
-                                <Entry entry={entry} key={entry.id} address='/entry-events-new/' />
+                                <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5" key={entry.id}>
+                                    <Entry entry={entry} address='/entry-events-new/' />
+                                </div>
                             )
                         })}
                     </div>
@@ -64,7 +66,9 @@ class Events extends Component {
                     <div className="row m-auto py-4 py-md-5 justify-content-center">
                         {eventsOld && eventsOld.map((entry) => {
                             return (
-                                <Entry entry={entry} key={entry.id} address='/entry-events-old/' />
+                                <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5" key={entry.id}>
+                                    <Entry entry={entry} address='/entry-events-old/' />
+                                </div>
                             )
                         })}
                     </div>

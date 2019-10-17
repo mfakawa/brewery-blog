@@ -65,7 +65,9 @@ class BrewingBeer extends Component {
                         {brewing &&
                             brewing.map((entry) => {
                                 return (
-                                    <Entry entry={entry} key={entry.id} address='/entry-brewing/' />
+                                    <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5" key={entry.id}>
+                                        <Entry entry={entry} address='/entry-brewing/' />
+                                    </div>
                                 )
                             })}
                     </div>
