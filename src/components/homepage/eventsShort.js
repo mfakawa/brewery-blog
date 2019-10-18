@@ -4,8 +4,8 @@ import Slider from 'react-slick';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
-import './homepage.scss';
-import YouTube from 'react-youtube';
+import './eventsShort.scss';
+// import YouTube from 'react-youtube';
 import Entry from '../entry/entry';
 
 
@@ -78,10 +78,10 @@ class EventsShort extends Component {
                         <p className="lead">Cześć! Chcesz poznać tajniki warzenia piwa? Jak najlepiej dobrać składniki oraz prześledzić relacje z degustacji najciekaszych piw? To dobrze trafiłeś! Zapraszam Cię na mój vlog</p>
                     </div>
                     <div id="youtube-size" className="col-lg-5 col-xl-6 py-lg-5 pb-3 text-lg-start">
-                        <YouTube
+                        {/* <YouTube
                             videoId='w8q_bi7ldiY'
                             opts={opts}
-                        />
+                        /> */}
                     </div>
                 </div>
             </div >

@@ -1,14 +1,13 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
 #about-us{
 
     #about-us-top {
-        height: 40vh;
-        background: url(img/pasja.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
-        top: -56px;
+        @include background-head-image($tab-image-heigth);
+        background-image: url(img/pasja.jpg);
 
+        
         @media (max-width: 768px ) {
         top: 0;
         }
@@ -92,12 +91,10 @@
                 }
             }
         }
+
         #about-us-content-background {
-            background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.7)),
-                url(img/o-nas.jpg);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            @include background-body-image;
+            background-image: $image-gradient, url(img/o-nas.jpg);
 
             #img {
                 top: -150px;

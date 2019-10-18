@@ -1,10 +1,10 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
+
 #contact-top {
-    position: relative;
-    top: -56px;
-    height: 40vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    @include background-head-image($tab-image-heigth);
     background-image: url('phone.jpg');
 
     @media (max-width: 768px ) {

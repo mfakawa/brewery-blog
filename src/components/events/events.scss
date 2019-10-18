@@ -1,17 +1,13 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
 
 
 #events-top {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.5)),
-        url('img/wiosna.jpg');
+    @include background-body-image;
+    background-image: $image-gradient, url('img/wiosna.jpg');
 }
 
 #events-bottom {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.5)),
-        url('img/jesien.jpg');
+    @include background-body-image;
+    background-image: $image-gradient, url('img/jesien.jpg');
 }

@@ -1,0 +1,29 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
+#homepage-top {
+    @include background-head-image($homepage-image-heigth);
+    background-image: url(img/home_photo.jpg);
+    
+
+    #homepage-top-cover {
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100vh;
+    }
+
+    @media (max-width: 767px){
+    display: none;
+    }
+}
+
+#newest-entries {
+    @include background-body-image;
+    background-image: url(img/piwo-tlo.jpg);
+
+}
+
+
+
+
+

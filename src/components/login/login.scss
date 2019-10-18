@@ -1,11 +1,11 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
 #login-background {
-    position: relative;
-    height: 40vh;
-    top: -56px;
+    @include background-head-image($tab-image-heigth);
     background-image: url(login.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+
 
     @media (max-width: 768px) {
         top: 0;

@@ -1,0 +1,15 @@
+@mixin background-body-image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin background-head-image($image-height) {
+    height: $image-height;
+    position: relative;
+    top: -56px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

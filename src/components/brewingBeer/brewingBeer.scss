@@ -1,4 +1,8 @@
-    img {
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
+img {
         width: 100%;
         height: auto;
     }
@@ -10,10 +14,7 @@
     }
 
     #brewing-bottom {
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(255, 255, 255, 0.5)),
-            url('img/warzenie.jpg');
+        @include background-body-image;
+        background-image: $image-gradient, url(img/warzenie.jpg);
     }
 

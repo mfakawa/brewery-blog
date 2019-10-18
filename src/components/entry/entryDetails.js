@@ -8,6 +8,7 @@ import EntryPN from './entryPN';
 import moment from 'moment';
 import 'moment/locale/pl';
 import Entry from './entry';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 class EntryDetails extends Component {
@@ -33,8 +34,8 @@ class EntryDetails extends Component {
                     </div>
                     <div className="jumbotron jumbotron-fluid bg-transparent m-0 py-0">
                         <div className="container">
-                            <p id="entry-details-content-date" className="mb-2 text-muted">Autor: {entry.nick}
-                                <span>data publikacji: {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</span></p>
+                            <p id="entry-details-content-date" className="mb-2 text-muted"><FontAwesomeIcon icon="user" /> {entry.nick}
+                                <span><FontAwesomeIcon icon="clock" /> {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</span></p>
                             <p className="mb-4 pb-3 text-muted border-bottom border-secondary">
                                 {entry.option.includes("brewing") &&
                                     <Link to="/brewing" className="text-decoration-none"><small className="short-brewing bg-warning py-1 px-2 font-weight-bold text-white">Warzenie</small></Link>

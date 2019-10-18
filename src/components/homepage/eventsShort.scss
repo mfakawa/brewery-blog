@@ -1,38 +1,10 @@
-#homepage-top {
-    height: 100vh;
-    background: url(img/home_photo.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    top: -56px;
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
 
-    #homepage-top-cover {
-        background-color: rgba(0, 0, 0, 0.4);
-        height: 100vh;
-    }
-
-    @media (max-width: 767px){
-    display: none;
-    }
-}
-
-
-#newest-entries {
-    background: url(img/piwo-tlo.jpg);
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 
 #events-short {
-    position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: linear-gradient(to bottom, rgb(255, 255, 255), rgba(117, 44, 2, 0.1)),
-        url(img/pole.jpg);
-    
+    @include background-body-image;
+    background-image: $image-gradient, url(img/pole.jpg);
 
     #events-short-mobile {
         @media (min-width: 768px ) {
@@ -110,5 +82,3 @@
 
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-
-

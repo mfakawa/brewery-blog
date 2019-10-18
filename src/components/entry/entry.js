@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 import 'moment/locale/pl';
 import './entry.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const Entry = ({ entry, address }) => {
@@ -16,8 +17,8 @@ const Entry = ({ entry, address }) => {
                     <div id="text-style" className="col-md-6">
                         <div className="card-body p-0">
                             <h4 className="card-title mb-2 mb-md-3 mt-3 mt-md-0">{entry.title}</h4>
-                            <h6 className="m-0">Autor: {entry.nick}</h6>
-                            <p className="mb-1"><small className="text-dark"> Data publikacji: {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</small></p>
+                            <h6 className="m-0"><FontAwesomeIcon icon={['far', 'user']} /> {entry.nick}</h6>
+                            <p className="mb-1"> <small className="text-dark"><FontAwesomeIcon icon={['far', 'clock']} /> {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</small></p>
                             {entry.option.includes("brewing") &&
                                 <small className="short-brewing bg-warning py-1 px-2 font-weight-bold text-white">Warzenie</small>
                             } {entry.option.includes("events") &&
