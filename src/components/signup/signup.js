@@ -70,7 +70,7 @@ class Signup extends Component {
 
         return (
             <div id="sign-up">
-                <div className="grey-top">
+                <div id="sign-up-top">
                 </div>
                 <div className="container">
                     <div className="jumbotron jumbotron-fluid p-5 mt-0 mb-5 my-sm-5 ">

@@ -4,12 +4,73 @@
     background-size: cover;
 }
 
-@mixin background-head-image($image-height) {
-    height: $image-height;
+@mixin background-head-image($height, $top) {
     position: relative;
-    top: -56px;
+    height: $height;
+    top: $top;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+@mixin tab-head {
+    position: relative;
+    height: 40vh;
+    top: -56px;
+
+    @media (max-width: 768px) {
+        top: 0;
+    }
+
+    .slider {
+        img {
+            object-fit: cover;
+            height: 40vh;
+            width: 100%;
+            filter: brightness(80%);
+        }
+    }
+
+    .head-title {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        // top: 50%;
+        // left: 50%;
+        // transform: translate(-50%, -50%);
+        display: flex;
+        justify-items: center;
+
+        h1 {
+            @media (max-width: 992px) {
+                font-size: 3.5rem;
+                margin: 0 24px !important;
+            }
+            @media (max-width: 576px) {
+                font-size: 2.5rem;
+            }
+        }  
+    }
+}
+
+@mixin section-title {
+    font-size: 3rem;
+
+    @media (max-width: 768px ) {
+        font-size: 2.5rem;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 2rem;
+    }
+}
+
+@mixin navbar-background($arg){
+    position: relative;
+    top: $arg;
+    height: -$arg;
+    background-color: #343A40;
+    @content;
+}

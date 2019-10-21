@@ -15,10 +15,10 @@ class EventsShort extends Component {
 
     render() {
         const { eventsOld } = this.props;
-        const opts = {
-            height: 'auto',
-            width: 'auto',
-        }
+        // const opts = {
+        //     height: 'auto',
+        //     width: 'auto',
+        // }
 
         let sliderSettings = {
             autoplay: true,
@@ -31,8 +31,8 @@ class EventsShort extends Component {
         };
 
         return (
-            < div id="events-short" >
-                <h1 className="section-title pb-2 mb-0 mx-2 mt-md-0 my-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Festiwale, wydarzenia, spotkania</h1>
+            <div id="events-short">
+                <h1 className="pb-2 mb-0 mx-2 mt-md-0 my-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Festiwale, wydarzenia, spotkania</h1>
                 <div id="events-short-mobile" className="jumbotron p-0 m-0 bg-transparent">
                     <div className="row m-auto py-3 py-sm-4 justify-content-center">
                         {eventsOld && eventsOld.map((entry, index) => {
@@ -84,10 +84,11 @@ class EventsShort extends Component {
                         /> */}
                     </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }
+
 
 const mapStateToProps = (state) => {
     return {

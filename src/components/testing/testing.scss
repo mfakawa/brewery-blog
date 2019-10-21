@@ -1,12 +1,26 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-img {
-    width: 100%;
-    height: auto;
-}
 
-#testing-bottom {
-    @include background-body-image;
-    background-image: $image-gradient, url('img/degustacja.jpg');
+#testing {
+    #testing-head {
+        @include tab-head;
+    }
+
+    #testing-content {
+        h1 {
+            @include section-title;
+        }
+        
+        p{
+            @media (max-width: 576px) {
+                font-size: 1rem;
+            }
+        }
+
+        #testing-content-entries {
+            @include background-body-image;
+            background-image: $image-gradient, url(img/degustacja.jpg);
+        }
+    }
 }

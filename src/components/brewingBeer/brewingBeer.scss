@@ -2,19 +2,29 @@
 @import '../../styles/variables.scss';
 
 
-img {
-        width: 100%;
-        height: auto;
+#brewing-beer {
+    #brewing-beer-head {
+        @include tab-head;
     }
-    
+
     #brewing-beer-content {
-        @media (max-width: 576px) {
-            font-size: 1rem;
+        h1 {
+            @include section-title;
+        }
+        
+        p{
+            @media (max-width: 576px) {
+                font-size: 1rem;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #brewing-beer-content-entries {
+            @include background-body-image;
+            background-image: $image-gradient, url(img/warzenie.jpg);
         }
     }
-
-    #brewing-bottom {
-        @include background-body-image;
-        background-image: $image-gradient, url(img/warzenie.jpg);
-    }
-
+}

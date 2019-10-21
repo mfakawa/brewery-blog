@@ -27,7 +27,7 @@ class EntryDetails extends Component {
         if (entry) {
             return (
                 <div id="entry-details">
-                    <div className="grey-top">
+                    <div id="entry-details-top">
                     </div>
                     <div className="jumbotron mt-2 mb-3 mb-md-4 mt-lg-0 p-3 p-md-5 bg-light shadow-sm">
                         <h1 className="container">{entry.title}</h1>

@@ -15,9 +15,9 @@ class NewestEntries extends Component {
     render() {
         const { brewing, testing } = this.props;
         return (
-            <>
-                <div id="homepage-top" className="jumbotron jumbotron-fluid bg-white m-0 p-0">
-                    <div id="homepage-top-cover">
+            <div id="newest-entries">
+                <div id="newest-entries-background" className="jumbotron jumbotron-fluid bg-white m-0 p-0">
+                    <div id="newest-entries-background-cover">
                         <div className="row h-100 m-0">
                             <div className="col my-auto">
                                 <h1 className="display-2 font-weight-bold font-italic text-white text-center">Pięćdziesiąt twarzy krafta</h1>
@@ -25,8 +25,8 @@ class NewestEntries extends Component {
                         </div>
                     </div>
                 </div>
-                <div id="newest-entries">
-                    <h1 className="section-title pb-2 mb-0 mt-4 mx-2 mt-md-0 mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Nowości</h1>
+                <div id="newest-entries-content">
+                    <h1 className="pb-2 mb-0 mt-4 mx-2 mt-md-0 mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Nowości</h1>
                     <div className="jumbotron p-0 m-0 bg-transparent">
                         <div className="row m-auto py-3 py-sm-4 justify-content-center">
                             {brewing && brewing.map((entry, index) => {
@@ -44,14 +44,13 @@ class NewestEntries extends Component {
                                         <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5" key={entry.id}>
                                             <Entry entry={entry} address='/entry-testing/' />
                                         </div>
-
                                     )
                                 }
                             })}
                         </div>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 }

@@ -2,10 +2,10 @@
 @import '../../styles/variables.scss';
 
 
-
 #contact-top {
-    @include background-head-image($tab-image-heigth);
+    @include background-head-image($tabImageHeigth, $topTranslation);
     background-image: url('phone.jpg');
+
 
     @media (max-width: 768px ) {
         top: 0;

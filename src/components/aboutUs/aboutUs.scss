@@ -1,10 +1,10 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-#about-us{
 
+#about-us{
     #about-us-top {
-        @include background-head-image($tab-image-heigth);
+        @include background-head-image($tabImageHeigth, $topTranslation);
         background-image: url(img/pasja.jpg);
 
         

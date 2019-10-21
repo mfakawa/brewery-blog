@@ -32,35 +32,34 @@ class Testing extends Component {
 
         const { testing } = this.props;
         return (
-            <div>
-                <div className="test jumbotron m-0 p-0">
-                    <div>
-                        <Slider className="slider" {...sliderSettings} >
-                            <img src={photo1} alt="events-photo1" />
-                            <img src={photo2} alt="events-photo2" />
-                            <img src={photo3} alt="events-photo3" />
-                        </Slider>
-                    </div>
+            <div id="testing">
+                <div id="testing-head" className="jumbotron m-0 p-0">
+                    <Slider className="slider" {...sliderSettings} >
+                        <img src={photo1} alt="events-photo1" />
+                        <img src={photo2} alt="events-photo2" />
+                        <img src={photo3} alt="events-photo3" />
+                    </Slider>
                     <div className="head-title">
                         <div className="row mx-auto align-items-center">
                             <h1 className="display-3 font-weight-bold font-italic text-center text-white">Smak, do którego wracasz</h1>
                         </div>
                     </div>
                 </div>
-                <h1 className="section-title pb-2 mb-0 mx-2 mt-4 mt-md-0 mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Piwo</h1>
-                <div id="testing-bottom" className="jumbotron m-0 p-0 bg-transparent">
-                    <div className="row m-auto py-4 py-md-5 justify-content-center">
-                        {testing &&
-                            testing.map((entry) => {
-                                return (
-                                    <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5" key={entry.id}>
-                                        <Entry entry={entry} address='/entry-testing/' />
-                                    </div>
-                                )
-                            })}
+                <div id="testing-content">
+                    <h1 className="pb-2 mb-0 mx-2 mt-4 mt-md-0 mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Piwo</h1>
+                    <div id="testing-content-entries" className="jumbotron m-0 p-0 bg-transparent">
+                        <div className="row m-auto py-4 py-md-5 justify-content-center">
+                            {testing &&
+                                testing.map((entry) => {
+                                    return (
+                                        <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5" key={entry.id}>
+                                            <Entry entry={entry} address='/entry-testing/' />
+                                        </div>
+                                    )
+                                })}
+                        </div>
                     </div>
                 </div>
-
             </div>
         )
     }

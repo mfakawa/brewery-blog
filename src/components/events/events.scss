@@ -2,12 +2,33 @@
 @import '../../styles/variables.scss';
 
 
-#events-top {
-    @include background-body-image;
-    background-image: $image-gradient, url('img/wiosna.jpg');
+#events {
+    #events-head {
+        @include tab-head;
+    }
+
+    #events-content {
+        h1 {
+            @include section-title;
+        }
+        
+        p{
+            @media (max-width: 576px) {
+                font-size: 1rem;
+            }
+        }
+
+        #events-content-new-entries {
+            @include background-body-image;
+            background-image: $image-gradient, url('img/wiosna.jpg');
+        }
+        
+        #events-content-old-entries {
+            @include background-body-image;
+            background-image: $image-gradient, url('img/jesien.jpg');
+        }
+    }
 }
 
-#events-bottom {
-    @include background-body-image;
-    background-image: $image-gradient, url('img/jesien.jpg');
-}
+
+

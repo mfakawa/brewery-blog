@@ -80,7 +80,7 @@ class CreateEntry extends Component {
             <>
                 {auth.uid ? (
                     <div id="create-entry">
-                        <div className="grey-top">
+                        <div id="create-entry-top">
                         </div>
                         <div className="container">
                             <div className="jumbotron jumbotron-fluid px-5 mt-0 mb-5">
@@ -152,7 +152,8 @@ class CreateEntry extends Component {
                     </div>
                 ) : (
                         <Redirect to='/login' />
-                    )}
+                    )
+                }
             </>
         );
     }

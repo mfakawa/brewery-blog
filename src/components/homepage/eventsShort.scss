@@ -6,6 +6,10 @@
     @include background-body-image;
     background-image: $image-gradient, url(img/pole.jpg);
 
+    h1 {
+        @include section-title;
+    }
+
     #events-short-mobile {
         @media (min-width: 768px ) {
             display: none;
@@ -60,7 +64,6 @@
         }
 
         #youtube-size {
-
             div {
             background-color: rgba(0, 0, 0, 0.0);
 

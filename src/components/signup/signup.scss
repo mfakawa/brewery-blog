@@ -1,4 +1,12 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
 #sign-up {
+    #sign-up-top{
+        @include navbar-background($topTranslation);
+    }
+
     h1 {
         @media (max-width: 576px) {
             font-size: 2rem;

@@ -3,7 +3,7 @@
 
 
 #login-background {
-    @include background-head-image($tab-image-heigth);
+    @include background-head-image($tabImageHeigth, $topTranslation);
     background-image: url(login.jpg);
 
 

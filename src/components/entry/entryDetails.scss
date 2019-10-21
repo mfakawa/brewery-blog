@@ -1,8 +1,13 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
 #entry-details {
-    div.grey-top {
-        @media (max-width: 992px) {
-            display: none;
-        }
+    #entry-details-top {
+        @include navbar-background($topTranslation){
+            @media (max-width: 768px) {
+                display: none;
+            }
+        };
     }
 
     div {
@@ -24,6 +29,7 @@
     }
 
     img {
+        width: 100%;
         text-align: center;
     }
     

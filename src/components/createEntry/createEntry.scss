@@ -1,5 +1,12 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+
 #create-entry {
-    
+    #create-entry-top{
+        @include navbar-background($topTranslation);
+    }
+
     h1 {
         @media (max-width: 576px) {
             font-size: 2rem;
