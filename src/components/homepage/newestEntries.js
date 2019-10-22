@@ -16,12 +16,10 @@ class NewestEntries extends Component {
         const { brewing, testing } = this.props;
         return (
             <div id="newest-entries">
-                <div id="newest-entries-background" className="jumbotron jumbotron-fluid bg-white m-0 p-0">
-                    <div id="newest-entries-background-cover">
-                        <div className="row h-100 m-0">
-                            <div className="col my-auto">
-                                <h1 className="display-2 font-weight-bold font-italic text-white text-center">Pięćdziesiąt twarzy krafta</h1>
-                            </div>
+                <div id="newest-entries-top" className="jumbotron jumbotron-fluid bg-white m-0 p-0">
+                    <div className="tab-head-image-background-cover row m-0 align-items-center">
+                        <div className="col">
+                            <h1 id="newest-entries-top-title" className="display-2 m-0 font-weight-bold font-italic text-white text-center">Pięćdziesiąt twarzy krafta</h1>
                         </div>
                     </div>
                 </div>

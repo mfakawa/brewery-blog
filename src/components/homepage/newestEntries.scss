@@ -3,23 +3,26 @@
 
 
 #newest-entries {
-
-    #newest-entries-background {
-        @include background-head-image($homepageImageHeigth, $topTranslation);
+    #newest-entries-top {
+        @include tab-head-image($homepageImageHeigth, $topTranslation, $darkerBackground);
         background-image: url(img/home_photo.jpg);
     
-        #newest-entries-background-cover {
-            background-color: rgba(0, 0, 0, 0.4);
-            height: $homepageImageHeigth;
-        }
-    
         @media (max-width: 767px){
-        display: none;
+            display: none;
+        }
+
+        #newest-entries-top-title {
+            @media (max-width: 1200px) {
+                font-size: 5rem;
+            }
+            @media (max-width: 992px) {
+                font-size: 4.5rem;
+            }
         }
     }
     
     #newest-entries-content {
-        @include background-body-image;
+        @include body-background-image;
         background-image: url(img/piwo-tlo.jpg);
 
         h1 {

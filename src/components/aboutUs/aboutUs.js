@@ -13,9 +13,9 @@ class AboutUs extends Component {
         return (
             <div id="about-us">
                 <div id="about-us-top" className="jumbotron jumbotron-fluid m-0 p-0">
-                    <div id="about-us-top-title" className="row h-100 m-0">
-                        <div className="col my-auto">
-                            <h1 className="display-3 font-weight-bold font-italic text-center text-white">Pasja, która łączy</h1>
+                    <div className="tab-head-image-background-cover row m-0 align-items-center">
+                        <div className="col">
+                            <h1 className="display-3 m-0 font-weight-bold font-italic text-center text-white">Pasja, która łączy</h1>
                         </div>
                     </div>
                 </div>

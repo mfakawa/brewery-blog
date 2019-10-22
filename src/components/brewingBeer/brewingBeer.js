@@ -40,9 +40,11 @@ class BrewingBeer extends Component {
                         <img src={photo2} alt="events-photo2" />
                         <img src={photo3} alt="events-photo3" />
                     </Slider>
-                    <div className="head-title">
+                    <div className="tab-head-slider-title">
                         <div className="row mx-auto align-items-center">
-                            <h1 className="display-3 font-weight-bold font-italic text-center text-white">Praca, która owocuje smakiem</h1>
+                            <div className="col">
+                                <h1 className="display-3 font-weight-bold font-italic text-center text-white">Praca, która owocuje smakiem</h1>
+                            </div>
                         </div>
                     </div>
                 </div>

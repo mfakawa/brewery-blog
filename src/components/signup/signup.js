@@ -72,8 +72,8 @@ class Signup extends Component {
             <div id="sign-up">
                 <div id="sign-up-top">
                 </div>
-                <div className="container">
-                    <div className="jumbotron jumbotron-fluid p-5 mt-0 mb-5 my-sm-5 ">
+                <div className="container py-3 py-sm-0">
+                    <div className="jumbotron jumbotron-fluid py-4 px-5 py-sm-5 mb-5 ">
                         <h1 className="text-center mb-5 ">Rejestracja</h1>
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group row">

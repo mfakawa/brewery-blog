@@ -82,9 +82,9 @@ class CreateEntry extends Component {
                     <div id="create-entry">
                         <div id="create-entry-top">
                         </div>
-                        <div className="container">
-                            <div className="jumbotron jumbotron-fluid px-5 mt-0 mb-5">
-                                <h1 className="text-center mb-5 ">Nowy wpis</h1>
+                        <div className="container py-3 py-sm-0">
+                            <div className="jumbotron jumbotron-fluid py-4 px-5 py-sm-5 mb-5">
+                                <h1 className="text-center mb-3 mb-sm-5 ">Nowy wpis</h1>
                                 <form onSubmit={this.handleSubmit}>
                                     <fieldset className="form-group">
                                         <div className="row">

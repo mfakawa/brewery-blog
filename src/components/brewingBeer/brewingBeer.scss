@@ -4,7 +4,7 @@
 
 #brewing-beer {
     #brewing-beer-head {
-        @include tab-head;
+        @include tab-head-slider($tabImageHeigth, $topTranslation);
     }
 
     #brewing-beer-content {
@@ -23,7 +23,7 @@
         }
 
         #brewing-beer-content-entries {
-            @include background-body-image;
+            @include body-background-image;
             background-image: $image-gradient, url(img/warzenie.jpg);
         }
     }

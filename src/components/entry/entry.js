@@ -20,11 +20,11 @@ const Entry = ({ entry, address }) => {
                             <h6 className="m-0"><FontAwesomeIcon icon={['far', 'user']} /> {entry.nick}</h6>
                             <p className="mb-1"> <small className="text-dark"><FontAwesomeIcon icon={['far', 'clock']} /> {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</small></p>
                             {entry.option.includes("brewing") &&
-                                <small className="short-brewing bg-warning py-1 px-2 font-weight-bold text-white">Warzenie</small>
+                                <small className="list bg-warning py-1 px-2 font-weight-bold text-white">Warzenie</small>
                             } {entry.option.includes("events") &&
-                                <small className="short-brewing bg-success py-1 px-2 font-weight-bold text-white">Wydarzenia</small>
+                                <small className="list bg-success py-1 px-2 font-weight-bold text-white">Wydarzenia</small>
                             } {entry.option.includes("testing") &&
-                                <small className="short-brewing bg-info py-1 px-2 font-weight-bold text-white">Degustacje</small>
+                                <small className="list bg-info py-1 px-2 font-weight-bold text-white">Degustacje</small>
                             }
                         </div>
                     </div>

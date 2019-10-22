@@ -4,7 +4,7 @@
 
 #testing {
     #testing-head {
-        @include tab-head;
+        @include tab-head-slider($tabImageHeigth, $topTranslation);
     }
 
     #testing-content {
@@ -19,7 +19,7 @@
         }
 
         #testing-content-entries {
-            @include background-body-image;
+            @include body-background-image;
             background-image: $image-gradient, url(img/degustacja.jpg);
         }
     }

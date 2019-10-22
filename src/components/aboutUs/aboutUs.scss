@@ -4,30 +4,8 @@
 
 #about-us{
     #about-us-top {
-        @include background-head-image($tabImageHeigth, $topTranslation);
+        @include tab-head-image($tabImageHeigth, $topTranslation, $darkBackground);
         background-image: url(img/pasja.jpg);
-
-        
-        @media (max-width: 768px ) {
-        top: 0;
-        }
-
-        div {
-            div {
-                h1 {
-                    @media (max-width: 992px) {
-                        font-size: 3.5rem;
-                    }
-                    @media (max-width: 576px) {
-                        font-size: 2.5rem;
-                    }
-                }
-            }
-        }
-    }
-
-    #about-us-top-title {
-        background-color: rgba(0, 0, 0, 0.15);
     }
 
     blockquote {
@@ -93,7 +71,7 @@
         }
 
         #about-us-content-background {
-            @include background-body-image;
+            @include body-background-image;
             background-image: $image-gradient, url(img/o-nas.jpg);
 
             #img {

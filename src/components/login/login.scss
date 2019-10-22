@@ -1,34 +1,17 @@
 @import '../../styles/mixins.scss';
 @import '../../styles/variables.scss';
 
-
-#login-background {
-    @include background-head-image($tabImageHeigth, $topTranslation);
-    background-image: url(login.jpg);
-
-
-    @media (max-width: 768px) {
-        top: 0;
+#login{
+    #login-top {
+        @include tab-head-image($tabImageHeigth, $topTranslation, $darkBackground);
+        background-image: url(login.jpg);
     }
 
-    div {
-        div {
-            h1 {
-                @media (max-width: 992px) {
-                    font-size: 3.5rem;
-                }
-                @media (max-width: 576px) {
-                    font-size: 2.5rem;
-                }
-            }
+    #login-content {
+        margin: 24px auto 80px !important;
+
+        @media (max-width: 768px) {
+            margin: 48px auto !important;
         }
-    }
-}
-
-#login-content {
-    margin: 24px auto 80px !important;
-
-    @media (max-width: 768px) {
-        margin: 48px auto !important;
     }
 }

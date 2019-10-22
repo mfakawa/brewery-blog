@@ -38,11 +38,11 @@ class EntryDetails extends Component {
                                 <span><FontAwesomeIcon icon="clock" /> {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</span></p>
                             <p className="mb-4 pb-3 text-muted border-bottom border-secondary">
                                 {entry.option.includes("brewing") &&
-                                    <Link to="/brewing" className="text-decoration-none"><small className="short-brewing bg-warning py-1 px-2 font-weight-bold text-white">Warzenie</small></Link>
+                                    <Link to="/brewing" className="text-decoration-none"><small className="list bg-warning py-1 px-2 font-weight-bold text-white">Warzenie</small></Link>
                                 } {entry.option.includes("events") &&
-                                    <Link to="/events" className="text-decoration-none"><small className="short-brewing bg-success py-1 px-2 font-weight-bold text-white">Wydarzenia</small></Link>
+                                    <Link to="/events" className="text-decoration-none"><small className="list bg-success py-1 px-2 font-weight-bold text-white">Wydarzenia</small></Link>
                                 } {entry.option.includes("testing") &&
-                                    <Link to="/testing" className="text-decoration-none"> <small className="short-brewing bg-info py-1 px-2 font-weight-bold text-white">Degustacje</small></Link>
+                                    <Link to="/testing" className="text-decoration-none"> <small className="list bg-info py-1 px-2 font-weight-bold text-white">Degustacje</small></Link>
                                 }
                             </p>
 
@@ -50,12 +50,12 @@ class EntryDetails extends Component {
                                 <img src={entry.photo1} alt="" className="mb-2" />
                             </div>
                             <p className="font-italic border-bottom pb-2"><small>{entry.description1}</small></p>
-                            <p id="entry-details-content-body" className="mb-4 text-justify">{entry.text1}</p>
+                            <p id="entry-details-content-body" className="mb-4">{entry.text1}</p>
                             <div className="img-center">
                                 <img src={entry.photo2} alt="" className="mb-2" />
                             </div>
                             <p className="font-italic border-bottom pb-2"><small>{entry.description2}</small></p>
-                            <p id="entry-details-content-body" className="text-justify mb-4 mb-md-5 pb-4 border-bottom">{entry.text2}</p>
+                            <p id="entry-details-content-body" className="mb-4 mb-md-5 pb-4 border-bottom">{entry.text2}</p>
                         </div>
                     </div>
                     <EntryPN otherEntry={otherEntry} id={id} />

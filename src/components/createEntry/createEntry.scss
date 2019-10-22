@@ -5,6 +5,10 @@
 #create-entry {
     #create-entry-top{
         @include navbar-background($topTranslation);
+
+        @media (max-width: 575px) {
+            display: none;
+        }
     }
 
     h1 {

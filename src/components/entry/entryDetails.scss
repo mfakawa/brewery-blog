@@ -4,23 +4,18 @@
 #entry-details {
     #entry-details-top {
         @include navbar-background($topTranslation){
-            @media (max-width: 768px) {
+            
+            @media (max-width: 767px) {
                 display: none;
             }
         };
     }
 
-    div {
-        h1{
-            font-size: 3rem;
-
-            @media (max-width: 768px) {
-                font-size: 2.5rem; 
-            }
-
-            @media (max-width: 576px) {
-                font-size: 2rem; 
-            }
+    h1{
+        @include section-title;
+        
+        @media (max-width: 375px) {
+            font-size: 1.75rem;
         }
     }
 
@@ -28,26 +23,29 @@
     text-align: center;
     }
 
+    .list {
+        letter-spacing: 1px;
+    }
+
     img {
         width: 100%;
         text-align: center;
     }
-    
 
-#entry-details-content-date {
-    span {
-        &::before {
-            content: "|"
-        }
-        @media (max-width: 576px) {
-            display: block;
-
+    #entry-details-content-date {
+        span {
             &::before {
-                content: "";
+                content: "|"
+            }
+            @media (max-width: 576px) {
+                display: block;
+
+                &::before {
+                    content: "";
+                }
             }
         }
     }
-}
 
     #entry-details-content-body {
         line-height: 1.8;

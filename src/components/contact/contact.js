@@ -12,9 +12,9 @@ class Contact extends Component {
         return (
             <div id="contact">
                 <div id="contact-top">
-                    <div id="contact-top-title" className="row h-100 m-0">
-                        <div className="col my-auto">
-                            <h1 className="display-3 font-weight-bold font-italic text-center text-white">Bądźmy w kontakcie</h1>
+                    <div className="tab-head-image-background-cover row m-0 align-items-center">
+                        <div className="col">
+                            <h1 className="display-3 m-0 font-weight-bold font-italic text-center text-white">Bądźmy w kontakcie</h1>
                         </div>
                     </div>
                 </div>

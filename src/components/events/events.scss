@@ -4,7 +4,7 @@
 
 #events {
     #events-head {
-        @include tab-head;
+        @include tab-head-slider($tabImageHeigth, $topTranslation);
     }
 
     #events-content {
@@ -19,12 +19,12 @@
         }
 
         #events-content-new-entries {
-            @include background-body-image;
+            @include body-background-image;
             background-image: $image-gradient, url('img/wiosna.jpg');
         }
         
         #events-content-old-entries {
-            @include background-body-image;
+            @include body-background-image;
             background-image: $image-gradient, url('img/jesien.jpg');
         }
     }
