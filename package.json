@@ -18,12 +18,12 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-slick": "^0.24.0",
+    "react-youtube": "^7.9.0",
     "redux": "^4.0.1",
     "redux-firebase": "^0.3.3",
     "redux-firestore": "^0.8.0",
     "redux-thunk": "^2.3.0",
-    "slick-carousel": "^1.8.1",
-    "youtube-player": "^5.5.2"
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",

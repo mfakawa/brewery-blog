@@ -24,7 +24,7 @@ class NewestEntries extends Component {
                     </div>
                 </div>
                 <div id="newest-entries-content">
-                    <h1 className="pb-2 mb-0 mt-4 mx-2 mt-md-0 mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Nowości</h1>
+                    <h1 className="pb-2 pb-md-3 mb-0 mb-md-4 mt-3 mt-sm-4 mt-md-0 mx-2 mx-md-5 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Nowości</h1>
                     <div className="jumbotron p-0 m-0 bg-transparent">
                         <div className="row m-auto py-3 py-sm-4 justify-content-center">
                             {brewing && brewing.map((entry, index) => {

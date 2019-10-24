@@ -6,18 +6,6 @@ body {
     font-family: 'Open Sans', sans-serif !important;
 }
 
-    h2.pn-title {
-        font-size: 2rem;
-
-            @media (max-width: 768px ) {
-                font-size: 2rem;
-            }
-            @media (max-width: 576px) {
-                font-size: 1.5rem;
-            }
-    }
-
-
     
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

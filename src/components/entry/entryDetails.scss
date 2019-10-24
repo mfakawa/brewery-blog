@@ -13,23 +13,24 @@
 
     h1{
         @include section-title;
-        
-        @media (max-width: 375px) {
-            font-size: 1.75rem;
-        }
-    }
-
-    .img-center {
-    text-align: center;
     }
 
     .list {
         letter-spacing: 1px;
     }
 
-    img {
-        width: 100%;
-        text-align: center;
+    .entry-details-image {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .entry-details-image-content {
+            width: 80%;
+
+            @media (max-width: 991px) {
+                width: 100%;
+            }
+        }
     }
 
     #entry-details-content-date {
@@ -47,12 +48,17 @@
         }
     }
 
-    #entry-details-content-body {
-        line-height: 1.8;
+    .entry-details-image-content {
+        p{
+            line-height: 1.2;
+        }
+    }
+
+    #entry-details-text {
+        line-height: 1.6;
     }
 }
 
 #entry-details-error {
     height: 80vh;
 }
-

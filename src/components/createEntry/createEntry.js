@@ -10,10 +10,20 @@ class CreateEntry extends Component {
         title: '',
         text1: '',
         text2: '',
+        text3: '',
+        checkboxText2: '',
+        checkboxText3: '',
         description1: '',
         description2: '',
+        description3: '',
+        checkboxDescription1: '',
+        checkboxDescription2: '',
+        checkboxDescription3: '',
         photo1: [],
         photo2: [],
+        photo3: [],
+        checkboxPhoto2: '',
+        checkboxPhoto3: '',
         option: ''
     }
 
@@ -31,6 +41,18 @@ class CreateEntry extends Component {
         this.setState({
             [data.target.id]: data.target.value
         })
+    }
+
+    handleAppend = (data) => {
+        if (this.state[data.target.id] === '1') {
+            this.setState({
+                [data.target.id]: ''
+            })
+        } else {
+            this.setState({
+                [data.target.id]: data.target.value
+            })
+        }
     }
 
     handleImage = (data) => {
@@ -73,9 +95,8 @@ class CreateEntry extends Component {
     }
 
     render() {
-        const { photo1, photo2 } = this.state;
+        const { photo1, photo2, photo3 } = this.state;
         const { auth } = this.props;
-
         return (
             <>
                 {auth.uid ? (
@@ -109,38 +130,84 @@ class CreateEntry extends Component {
                                             </div>
                                         </div>
                                     </fieldset>
+
                                     <div className="form-group row">
                                         <label htmlFor="title" className="col-sm-3 col-md-2 col-form-label">Tytuł</label>
                                         <input type="text" className="form-control col-sm-9 col-md-10" id="title" placeholder="wpisz tytuł..." onChange={this.handleChange} />
                                     </div>
+
+                                    <div className="form-group row">
+                                        <label htmlFor="photo1" className="col-md-2 col-form-label">Zdjęcie 1</label>
+                                        <input type="file" className="form-control-file  col-md-10" id="photo1" onChange={this.handleImage} />
+                                    </div>
+
+                                    <img className="mx-2 mb-3" src={photo1} alt="" />
+
+                                    <div className="form-group row">
+                                        <div className="form-check mt-2 col-1">
+                                            <input type="checkbox" className="m-0 form-check-input" id="checkboxDescription1" value="1" onChange={this.handleAppend} />
+                                        </div>
+                                        <label htmlFor="description1" className="col col-md-2 col-xl-2 col-form-label">Opis zdjęcia 1</label>
+                                        <input type="text" className="form-control col-md-9" id="description1" placeholder="wpisz treść..." onChange={this.handleChange} />
+                                    </div>
+
                                     <div className="form-group row">
                                         <label htmlFor="text1" className="col-sm-3 col-md-2 col-form-label">Treść 1</label>
                                         <textarea type="text" className="form-control col-sm-9 col-md-10" id="text1" placeholder="wpisz treść..." onChange={this.handleChange} />
                                     </div>
+
                                     <div className="form-group row">
-                                        <label htmlFor="text2" className="col-sm-3 col-md-2 col-form-label">Treść 2</label>
-                                        <textarea type="text" className="form-control col-sm-9 col-md-10" id="text2" placeholder="wpisz treść..." onChange={this.handleChange} />
-                                    </div>
-                                    <div className="form-group">
-                                        <div className="row mb-2">
-                                            <label htmlFor="photo1" className="col-md-2">Zdjęcie 1</label>
-                                            <input type="file" className="form-control-file  col-md-10" id="photo1" onChange={this.handleImage} />
+                                        <div className="form-check mt-2 col-1">
+                                            <input type="checkbox" className="m-0 form-check-input" id="checkboxPhoto3" value="1" onChange={this.handleAppend} />
                                         </div>
-                                        <div className="row">
-                                            <label htmlFor="photo2" className="col-md-2">Zdjęcie 2 (slider)</label>
-                                            <input type="file" className="form-control-file col-md-10" id="photo2" onChange={this.handleImage} />
+                                        <label htmlFor="photo2" className="col col-md-2 col-form-label">Zdjęcie 2 (slider)</label>
+                                        <input type="file" className="form-control-file col-md-9" id="photo2" onChange={this.handleImage} />
+                                    </div>
+
+                                    <img className="mx-2 mb-3" src={photo2} alt="" />
+
+                                    <div className="form-group row">
+                                        <div className="form-check mt-2 col-1">
+                                            <input type="checkbox" className="m-0 form-check-input" id="checkboxDescription2" value="1" onChange={this.handleAppend} />
                                         </div>
+                                        <label htmlFor="description2" className="col col-md-2 col-xl-2 col-form-label">Opis zdjęcia 2</label>
+                                        <input type="text" className="form-control col-md-9" id="description2" placeholder="wpisz treść..." onChange={this.handleChange} />
                                     </div>
-                                    <img className="m-2" src={photo1} alt="" />
-                                    <img className="m-2" src={photo2} alt="" />
+
                                     <div className="form-group row">
-                                        <label htmlFor="description1" className="col-sm-3 col-lg-2 col-form-label">Opis zdjęcia 1</label>
-                                        <input type="text" className="form-control col-sm-9 col-lg-10" id="description1" placeholder="wpisz treść..." onChange={this.handleChange} />
+                                        <div className="form-check mt-2 col-1">
+                                            <input type="checkbox" className="m-0 form-check-input" id="checkboxText2" value="1" onChange={this.handleAppend} />
+                                        </div>
+                                        <label htmlFor="text2" className="col col-md-2 col-xl-1 col-form-label">Treść 2</label>
+                                        <textarea type="text" className="form-control col-md-9 col-xl-10" id="text2" placeholder="wpisz treść..." onChange={this.handleChange} />
                                     </div>
+
                                     <div className="form-group row">
-                                        <label htmlFor="description2" className="col-sm-3 col-lg-2 col-form-label">Opis zdjęcia 2</label>
-                                        <input type="text" className="form-control col-sm-9 col-lg-10" id="description2" placeholder="wpisz treść..." onChange={this.handleChange} />
+                                        <div className="form-check mt-2 col-1">
+                                            <input type="checkbox" className="m-0 form-check-input" id="checkboxPhoto3" value="1" onChange={this.handleAppend} />
+                                        </div>
+                                        <label htmlFor="photo3" className="col col-md-2 col-form-label">Zdjęcie 3</label>
+                                        <input type="file" className="form-control-file col-md-9" id="photo3" onChange={this.handleImage} />
                                     </div>
+
+                                    <img className="mx-2 mb-3" src={photo3} alt="" />
+
+                                    <div className="form-group row">
+                                        <div className="form-check mt-2 col-1">
+                                            <input type="checkbox" className="m-0 form-check-input" id="checkboxDescription3" value="1" onChange={this.handleAppend} />
+                                        </div>
+                                        <label htmlFor="description3" className="col col-md-2 col-xl-2 col-form-label">Opis zdjęcia 3</label>
+                                        <input type="text" className="form-control col-md-9" id="description3" placeholder="wpisz treść..." onChange={this.handleChange} />
+                                    </div>
+
+                                    <div className="form-group row">
+                                        <div className="form-check mt-2 col-1">
+                                            <input type="checkbox" className="m-0 form-check-input" id="checkboxText3" value="1" onChange={this.handleAppend} />
+                                        </div>
+                                        <label htmlFor="text3" className="col col-md-2 col-xl-1 col-form-label">Treść 3</label>
+                                        <textarea type="text" className="form-control col-md-9 col-xl-10" id="text3" placeholder="wpisz treść..." onChange={this.handleChange} />
+                                    </div>
+
                                     <div className="form-group row">
                                         <div className="col text-center">
                                             <button type="submit" className="btn btn-primary mt-4">Zapisz</button>

@@ -20,19 +20,23 @@
         @media (max-width: 767px) {
             display: none;
         }
-        
+
+        img {
+            width: 100%;
+        }
+
         h2 {
             width: 95%;
             background-color: rgba(0, 0, 0, 0.5);
             position: absolute;
-            top:30px;
-            left:40px;
+            top: 30px;
+            left: 40px;
             color: rgb(255, 255, 255);
 
             @media (max-width: 992px) {
                 font-size: 1.75rem;
-                top:20px;
-                left:30px;
+                top: 20px;
+                left: 30px;
             }
         }
     }
@@ -53,7 +57,7 @@
             }
 
             p {
-                @media (max-width: 992px) {
+                @media (max-width: 991px) {
                     font-size: 1.2rem;
 
                 }

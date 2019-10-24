@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import './eventsShort.scss';
-// import YouTube from 'react-youtube';
+import YouTube from 'react-youtube';
 import Entry from '../entry/entry';
 
 
@@ -15,10 +15,10 @@ class EventsShort extends Component {
 
     render() {
         const { eventsOld } = this.props;
-        // const opts = {
-        //     height: 'auto',
-        //     width: 'auto',
-        // }
+        const opts = {
+            height: 'auto',
+            width: 'auto',
+        }
 
         let sliderSettings = {
             autoplay: true,
@@ -78,10 +78,10 @@ class EventsShort extends Component {
                         <p className="lead">Cześć! Chcesz poznać tajniki warzenia piwa? Jak najlepiej dobrać składniki oraz prześledzić relacje z degustacji najciekaszych piw? To dobrze trafiłeś! Zapraszam Cię na mój vlog</p>
                     </div>
                     <div id="youtube-size" className="col-lg-5 col-xl-6 py-lg-5 pb-3 text-lg-start">
-                        {/* <YouTube
+                        <YouTube
                             videoId='w8q_bi7ldiY'
                             opts={opts}
-                        /> */}
+                        />
                     </div>
                 </div>
             </div>

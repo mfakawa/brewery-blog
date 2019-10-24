@@ -23,7 +23,7 @@ class EntryDetails extends Component {
 
     render() {
         const { id, entry, otherEntry, brewing, testing, eventsOld } = this.props;
-
+        console.log(entry);
         if (entry) {
             return (
                 <div id="entry-details">
@@ -33,10 +33,12 @@ class EntryDetails extends Component {
                         <h1 className="container">{entry.title}</h1>
                     </div>
                     <div className="jumbotron jumbotron-fluid bg-transparent m-0 py-0">
-                        <div className="container">
+                        <div className="container pb-3">
                             <p id="entry-details-content-date" className="mb-2 text-muted"><FontAwesomeIcon icon="user" /> {entry.nick}
-                                <span><FontAwesomeIcon icon="clock" /> {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</span></p>
-                            <p className="mb-4 pb-3 text-muted border-bottom border-secondary">
+                                <span><FontAwesomeIcon icon="clock" /> {moment(entry.createAt.toDate()).locale('pl').format('LLL')}</span>
+                            </p>
+
+                            <p className="mb-3 mb-md-4 pb-3 text-muted border-bottom border-secondary">
                                 {entry.option.includes("brewing") &&
                                     <Link to="/brewing" className="text-decoration-none"><small className="list bg-warning py-1 px-2 font-weight-bold text-white">Warzenie</small></Link>
                                 } {entry.option.includes("events") &&
@@ -46,20 +48,50 @@ class EntryDetails extends Component {
                                 }
                             </p>
 
-                            <div className="img-center">
-                                <img src={entry.photo1} alt="" className="mb-2" />
+                            <div className="entry-details-image border-bottom pb-2 my-2 pb-md-3 my-md-3">
+                                <img src={entry.photo1} alt="" className="entry-details-image-content mb-2" />
+                                {entry.checkboxDescription1 &&
+                                    <div className="entry-details-image-content">
+                                        <p className="font-italic m-0"><small>{entry.description1}</small></p>
+                                    </div>
+                                }
                             </div>
-                            <p className="font-italic border-bottom pb-2"><small>{entry.description1}</small></p>
-                            <p id="entry-details-content-body" className="mb-4">{entry.text1}</p>
-                            <div className="img-center">
-                                <img src={entry.photo2} alt="" className="mb-2" />
-                            </div>
-                            <p className="font-italic border-bottom pb-2"><small>{entry.description2}</small></p>
-                            <p id="entry-details-content-body" className="mb-4 mb-md-5 pb-4 border-bottom">{entry.text2}</p>
+
+                            <p id="entry-details-text" className="mb-3 pb-2 mb-md-4 pb-md-3 border-bottom">{entry.text1}</p>
+
+                            {entry.checkboxPhoto2 &&
+                                <div className="entry-details-image border-bottom pb-2 my-2 pb-md-3 my-md-3">
+                                    <img src={entry.photo2} alt="" className="entry-details-image-content mb-2" />
+                                    {entry.checkboxDescription2 &&
+                                        <div className="entry-details-image-content">
+                                            <p className="font-italic m-0"><small>{entry.description2}</small></p>
+                                        </div>
+                                    }
+                                </div>
+                            }
+
+                            {entry.checkboxText2 &&
+                                <p id="entry-details-text" className="mb-3 pb-2 mb-md-4 pb-md-3 border-bottom">{entry.text2}</p>
+                            }
+
+                            {entry.checkboxPhoto3 &&
+                                <div className="entry-details-image border-bottom pb-2 my-2 pb-md-3 my-md-3">
+                                    <img src={entry.photo3} alt="" className="entry-details-image-content mb-2" />
+                                    {entry.checkboxDescription3 &&
+                                        <div className="entry-details-image-content">
+                                            <p className="font-italic m-0"><small>{entry.description3}</small></p>
+                                        </div>
+                                    }
+                                </div>
+                            }
+
+                            {entry.checkboxText3 &&
+                                <p id="entry-details-text" className="mb-3 pb-2 mb-md-4 pb-md-3 border-bottom">{entry.text3}</p>
+                            }
                         </div>
                     </div>
                     <EntryPN otherEntry={otherEntry} id={id} />
-                    <h1 className="section-title pb-2 mb-0 mx-2  mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center text-dark border-bottom border-dark">Zobacz także</h1>
+                    <h1 className="section-title pb-2 mb-0 mx-2  mb-md-4 mx-md-5 pb-md-3 display-4 font-weight-bold text-center border-bottom border-dark">Zobacz także</h1>
                     <div className="row m-auto py-3 py-sm-4 justify-content-center">
                         {(brewing && !window.location.pathname.includes("brewing")) &&
                             <div className="col-xl-5 px-3 mx-3 mx-sm-4 mx-md-5" key={brewing[0].id}>

@@ -90,8 +90,10 @@
     @media (max-width: 576px) {
         font-size: 2rem;
     }
-    
-    @content
+
+    @media (max-width: 375px) {
+        font-size: 1.75rem;
+    }
 }
 
 @mixin navbar-background($arg){
