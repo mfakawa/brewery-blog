@@ -1,30 +1,25 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
-
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 #brewing-beer {
-    #brewing-beer-head {
-        @include tab-head-slider($tabImageHeigth, $topTranslation);
+  #brewing-beer-content {
+    h1 {
+      @include section-title;
     }
 
-    #brewing-beer-content {
-        h1 {
-            @include section-title;
-        }
-        
-        p{
-            @media (max-width: 576px) {
-                font-size: 1rem;
-            }
-        }
-
-        img {
-            width: 100%;
-        }
-
-        #brewing-beer-content-entries {
-            @include body-background-image;
-            background-image: $image-gradient, url(img/warzenie.jpg);
-        }
+    p {
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
     }
+
+    img {
+      width: 100%;
+    }
+
+    #brewing-beer-content-entries {
+      @include body-background-image;
+      background-image: $image-gradient, url(img/warzenie.jpg);
+    }
+  }
 }

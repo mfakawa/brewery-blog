@@ -1,17 +1,17 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
-#login{
-    #login-top {
-        @include tab-head-image($tabImageHeigth, $topTranslation, $darkBackground);
-        background-image: url(login.jpg);
+#login {
+  #login-top {
+    @include tab-head-image($tabImageHeigth, $topTranslation, $darkBackground);
+    background-image: url(login.jpg);
+  }
+
+  #login-content {
+    margin: 24px auto 20vh !important;
+
+    @media (max-width: 768px) {
+      margin: 48px auto !important;
     }
-
-    #login-content {
-        margin: 24px auto 80px !important;
-
-        @media (max-width: 768px) {
-            margin: 48px auto !important;
-        }
-    }
+  }
 }

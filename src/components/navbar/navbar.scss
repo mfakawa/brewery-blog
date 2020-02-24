@@ -1,95 +1,96 @@
 nav {
-    @media (max-width: 767px) { 
-        background-color: #343A40;
-    }
-    
-    p {
-        display: none;
+  @media (max-width: 767px) {
+    background-color: #343a40;
+  }
 
-        br {
-            display: none;
+  p {
+    display: none;
 
-            @media (max-width:360px) {
-                display: inline;
-            }
-        }
+    br {
+      display: none;
 
-        @media (max-width: 767px) {
-            display: block;
-            letter-spacing: 1px;
-            position: absolute;
-            top: 16px;
-            left: 15px;
-        }
-
-        @media (max-width:360px) {
-            font-size: 0.9rem;
-            top: 7px;
-            left: 10px;
-        }
+      @media (max-width: 360px) {
+        display: inline;
+      }
     }
 
-        .navbar-collapse {
-            ul {
-                .nav-link {
-                    display: inline-block;
-                    vertical-align: middle;
-                    -webkit-transform: perspective(1px) translateZ(0);
-                    transform: perspective(1px) translateZ(0);
-                    box-shadow: 0 0 1px transparent;
-                    position: relative;
-                    overflow: hidden;
-                    color: rgba(255, 255, 255, 0.8) !important;   
-         
-                    &:hover {
-                        color: white !important;
-                    }
-
-                    &:focus {
-                        color: white !important;
-                    }
-                }
-
-                    .nav-link:before {
-                        content: "";
-                        position: absolute;
-                        z-index: 100;
-                        left: 50%;
-                        right: 50%;
-                        bottom: 0;
-                        background: white;
-                        height: 2px;
-                        -webkit-transition-property: left, right;
-                        transition-property: left, right;
-                        -webkit-transition-duration: 0.2s;
-                        transition-duration: 0.2s;
-                        -webkit-transition-timing-function: ease-out;
-                        transition-timing-function: ease-out;
-                    }
-
-                    .nav-link:hover:before, .nav-link:focus:before, .nav-link:active:before {
-                        left: 0;
-                        right: 0;
-                    }
-                    li {
-                        span{
-                         cursor: pointer;   
-                        }
-                    }
-                }
-
-        img {
-            position: absolute;
-            right: 0;
-            margin: 0 10px;
-            height: 40px;
-            width: 40px;
-
-            @media (max-width: 767px) {
-                position: static;
-                margin: 0;
-            }
-        }
+    @media (max-width: 767px) {
+      display: block;
+      letter-spacing: 1px;
+      position: absolute;
+      top: 16px;
+      left: 15px;
     }
+
+    @media (max-width: 360px) {
+      font-size: 0.9rem;
+      top: 7px;
+      left: 10px;
+    }
+  }
+
+  .navbar-collapse {
+    ul {
+      .nav-link {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        position: relative;
+        overflow: hidden;
+        color: rgba(255, 255, 255, 0.8) !important;
+
+        &:hover {
+          color: white !important;
+        }
+
+        &:focus {
+          color: white !important;
+        }
+      }
+
+      .nav-link:before {
+        content: "";
+        position: absolute;
+        z-index: 100;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        background: white;
+        height: 2px;
+        -webkit-transition-property: left, right;
+        transition-property: left, right;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+      }
+
+      .nav-link:hover:before,
+      .nav-link:focus:before,
+      .nav-link:active:before {
+        left: 0;
+        right: 0;
+      }
+      li {
+        span {
+          cursor: pointer;
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      margin: 0 10px;
+      height: 40px;
+      width: 40px;
+
+      @media (max-width: 767px) {
+        position: static;
+        margin: 0;
+      }
+    }
+  }
 }
-

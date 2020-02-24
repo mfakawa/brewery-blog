@@ -26,9 +26,11 @@
 
         .entry-details-image-content {
             width: 80%;
-
+            height: auto;
+            
             @media (max-width: 991px) {
                 width: 100%;
+                height: auto;
             }
         }
     }

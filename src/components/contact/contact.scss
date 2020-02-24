@@ -1,36 +1,33 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
-
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 #contact-top {
-    @include tab-head-image($tabImageHeigth, $topTranslation, $darkBackground);
-    background-image: url('phone.jpg');
+  @include tab-head-image($tabImageHeigth, $topTranslation, $darkBackground);
+  background-image: url("phone.jpg");
 }
 
 #contact-content {
-    margin-bottom: 150px !important;
+  margin-bottom: 20vh !important;
 
+  @media (max-width: 576px) {
+    margin-bottom: 48px !important;
+  }
+  p {
     @media (max-width: 576px) {
-        margin-bottom: 48px !important;
-
+      font-size: 1rem;
     }
-    p {
-        @media (max-width: 576px) {
-            font-size: 1rem;
-        }
+  }
+  h2 {
+    @media (max-width: 768px) {
+      font-size: 1.75rem;
     }
-        h2{
-            @media (max-width: 768px) {
-                font-size: 1.75rem;
-            }
-            @media (max-width: 576px) {
-                font-size: 1rem;
-                font-weight: bold;
-            }
-        }
+    @media (max-width: 576px) {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  }
 }
 
 #contact-top-title {
-    background-color: rgba(0, 0, 0, 0.15);
-
+  background-color: rgba(0, 0, 0, 0.15);
 }

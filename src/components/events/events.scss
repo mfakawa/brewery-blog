@@ -1,34 +1,26 @@
-@import '../../styles/mixins.scss';
-@import '../../styles/variables.scss';
-
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 #events {
-    #events-head {
-        @include tab-head-slider($tabImageHeigth, $topTranslation);
+  #events-content {
+    h1 {
+      @include section-title;
     }
 
-    #events-content {
-        h1 {
-            @include section-title;
-        }
-        
-        p{
-            @media (max-width: 576px) {
-                font-size: 1rem;
-            }
-        }
-
-        #events-content-new-entries {
-            @include body-background-image;
-            background-image: $image-gradient, url('img/wiosna.jpg');
-        }
-        
-        #events-content-old-entries {
-            @include body-background-image;
-            background-image: $image-gradient, url('img/jesien.jpg');
-        }
+    p {
+      @media (max-width: 576px) {
+        font-size: 1rem;
+      }
     }
+
+    #events-content-new-entries {
+      @include body-background-image;
+      background-image: $image-gradient, url("img/wiosna.jpg");
+    }
+
+    #events-content-old-entries {
+      @include body-background-image;
+      background-image: $image-gradient, url("img/jesien.jpg");
+    }
+  }
 }
-
-
-

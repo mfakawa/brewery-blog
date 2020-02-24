@@ -1,0 +1,6 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.header-slider {
+  @include tab-head-slider($tabImageHeigth, $topTranslation);
+}
